@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb", "prettier", "plugin:@wordpress/esilnt-plugin/recommended"],
   "plugins": ["prettier"],
   "env": {
     "browser": "true"
