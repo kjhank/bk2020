@@ -35,9 +35,7 @@ function add_additional_class_on_li($classes, $item, $args) {
 }
 
 function add_nav_anchor_classes($atts, $item, $args) {
-  // if( $args->theme_location == 'top-menu' ) {
-    $atts['class'] = 'menu-link-class';
-  // }
+    $atts['class'] = 'main-header__navigation-link';
   return $atts;
 }
 
