@@ -1,32 +1,32 @@
-@mixin shadow($x, $y, $blur, $spread, $color) {
-  box-shadow: #{$x/4}px #{$y/4}px #{$blur/4}px #{$spread/4}px lighten(rgba($color, 0.1), 0.5),
-              #{$x/2}px #{$y/2}px #{$blur/2}px #{$spread/2}px lighten(rgba($color, 0.1), 0.5),
-              #{$x}px #{$y}px #{$blur}px #{$spread}px lighten(rgba($color, 0.1), 0.5),
-              #{$x * 1.5}px #{$y * 1.5}px #{$blur * 1.5}px #{$spread * 1.5}px lighten(rgba($color, 0.1), 0.5),
-              #{$x * 2}px #{$y * 2}px #{$blur * 2}px #{$spread * 2}px lighten(rgba($color, 0.1), 0.5),
+@mixin shadow($offset-x, $offset-y, $color) {
+  box-shadow: #{$offset-x / 3} #{$offset-y / 3} #{$offset-y / 3} rgba($color, 0.2),
+              #{$offset-x * 2/3} #{$offset-y * 2/3} #{$offset-y * 2/3} rgba($color, 0.2),
+              #{$offset-x * 4/3} #{$offset-y * 4/3} #{$offset-y * 4/3} rgba($color, 0.2),
+              #{$offset-x * 8/3} #{$offset-y * 8/3} #{$offset-y * 8/3} rgba($color, 0.2),
+              #{$offset-x * 16/3} #{$offset-y * 16/3} #{$offset-y * 16/3} rgba($color, 0.2)
 }
 
 @mixin rwd($query, $mobileFirst: false) {
  $queries: (
-   'xxs'    : (max-width: 320px),
-   'xs'     : (max-width: 480px),
-   's'      : (max-width: 768px),
-   'm'      : (max-width: 1024px),
-   'l'      : (max-width: 1280px),
-   'xl'     : (max-width: 1440px),
-   'xxl'    : (max-width: 1600px),
-   'ultra'  : (max-width: 1920px)
+   'xs'     : (max-width: 600px),
+   's'      : (max-width: 900px),
+   'm'      : (max-width: 1200px),
+   'l'      : (max-width: 1600px),
+   'xl'     : (max-width: 1800px),
+   'ultra'  : (max-width: 2500px),
+   'touch'  : (pointer: coarse),
+   'mouse'  : (pointer: fine)
  );
 
   $queries-mf: (
-    'xxs'     : (min-width: 321px),
-    'xs'      : (min-width: 481px),
-    's'       : (min-width: 769px),
-    'm'       : (min-width: 1025px),
-    'l'       : (min-width: 1281px),
-    'xl'      : (min-width: 1441px),
-    'xxl'     : (min-width: 1601px),
-    'ultra'   : (min-width: 1921px)
+    'xs'      : (min-width: 601px),
+    's'       : (min-width: 901px),
+    'm'       : (min-width: 1201px),
+    'l'       : (min-width: 1601px),
+    'xl'      : (min-width: 1801px),
+    'ultra'   : (min-width: 2501px),
+    'touch'   : (pointer: coarse),
+    'mouse'   : (pointer: fine)
   );
 
   @if ($mobileFirst != false) {
@@ -36,7 +36,9 @@
         @content;
       }
     } @else {
-      @warn 'No breakpoint named `#{$query}`.';
+      @media (min-width: $query) {
+        @content;
+      }
     }
   } @else {
     @if map-has-key($queries, $query) {
@@ -45,7 +47,18 @@
         @content;
       }
     } @else {
-      @warn 'No breakpoint named `#{$query}`.';
+      @media (max-width: $query) {
+        @content;
+      }
     }
   }
+}
+
+@mixin flex($direction, $justify-content, $align-items, $wrap: true) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  @content
 }
