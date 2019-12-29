@@ -10,8 +10,8 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 function optimize_loading()
 {
   if (!is_admin()) {
-    wp_deregister_script('wp_embed');
-    // wp_deregister_script('jquery');
+    wp_deregister_script('wp-embed');
+    wp_deregister_script('jquery');
   }
 }
 
