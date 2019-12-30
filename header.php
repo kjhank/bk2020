@@ -16,7 +16,11 @@
 
 <body <?php body_class();?>>
 <header class="main-header">
-  <h1 class="main-header__logo"></h1>
+  <div class="container main-header__wrapper">
+    <h1 class="main-header__logo">
+      <?php $logo = get_field('main-logo', 'option');?>
+      <img src="<?=$logo['url']?>" alt="<?=$logo['alt'];?>">
+    </h1>
     <?php
     wp_nav_menu(array(
       'menu'  => 'top-menu',
@@ -28,4 +32,6 @@
       'menu_class'  => 'main-header__navigation-inner',
     ));
     ?>
+  </div>
 </header>
+<main class="main-content">
