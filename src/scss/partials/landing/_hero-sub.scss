@@ -1,0 +1,64 @@
+.hero-sub {
+  &__brow {
+    color: $color-highlight;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: $font-size-base;
+  }
+
+  &__paragraph {
+    font-size: $font-size-heading;
+    font-family: $font-family-serif;
+    line-height: 50px;
+  }
+
+  &__line {
+    width: 105px;
+  }
+
+  &__services {
+    position: relative;
+    bottom: -163px;
+    @include flex(row, space-between, flex-start);
+  }
+
+  &__single-service {
+    width: percentage(1/3);
+    height: 326px;
+    background-color: #fff;
+    color: $color-light;
+    padding: 30px 65px;
+
+    &-figure {
+      background-color: $color-light;
+      width: 80px;
+      height: 80px;
+    }
+
+    &-icon {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      max-height: 100%;
+    }
+
+    &-name {
+      font-size: 28px;
+      font-family: $font-family-serif;
+    }
+
+    &-line {
+      width: 107px;
+      background-color: $color-light;
+    }
+
+    &--highlight {
+      color: #fff;
+      background-image: radial-gradient(circle at top right, #b26493, $color-highlight);
+
+      .hero-sub__single-service-line {
+        background-color: #fff;
+      }
+    }
+  }
+}

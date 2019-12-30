@@ -1,0 +1,47 @@
+.services-section {
+  padding-top: 163px;
+  @include gradient(vertical, #e1e1e1, #fff);
+
+  &__brow {
+    color: $color-highlight;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__heading {
+    font-size: $font-size-heading;
+    font-family: $font-family-serif;
+  }
+
+  &__line {
+    width: 122px;
+  }
+
+  &__services {
+    @include flex(row, space-between, flex-start);
+  }
+
+  &__single-service {
+    width: 590px;
+    height: 315px;
+    @include flex(row, center, flex-end);
+    @include shadow(2px, 2px, $color-shadow);
+
+    &-name {
+      width: 527px;
+      height: 111px;
+      background-color: #fff;
+      font-family: $font-family-serif;
+      font-size: 28px;
+      margin: 0 0 -56px;
+      padding: 46px 55px;
+      @include flex(row, space-between, center);
+      @include shadow(2px, 2px, $color-shadow);
+
+      &::after {
+        content: '->';
+        color: $color-highlight;
+      }
+    }
+  }
+}

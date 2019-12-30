@@ -1,9 +1,27 @@
 // colors
 
-$c-lighter: #42474a;
-$c-foreground: #303636;
-$c-highlight: #983571;
+$color-lighter: #8c919b;
+$color-light: #555a5c;
+$color-foreground: #303537;
+$color-highlight: #993671;
+$color-near-white: #fbfbfb;
+$color-shadow: rgba(#33393b, 0.25);
+$color-gradient-start: $color-foreground;
+$color-gradient-end: #525d63;
 
-$f-size-base: 16px;
-$f-size-small: 12px;
-$f-size-large: 20px;
+// fonts
+
+$font-size-base: 16px;
+$font-size-xs: 10px;
+$font-size-s: 12px;
+$font-size-mid: 14px;
+$font-size-l: 20px;
+$font-size-xl: 36px;
+$font-size-heading: 46px;
+$font-family-sans: 'Arial', sans-serif;
+$font-family-serif: 'Times', serif;
+
+// container
+
+$container-width: 1440px;
+$container-padding: 105px;

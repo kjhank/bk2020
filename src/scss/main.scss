@@ -1,6 +1,16 @@
-@import './helpers/reset.scss';
-@import './helpers/vars.scss';
-@import './helpers/mixins.scss';
-@import './generic/fonts.scss';
-@import './generic/typography.scss';
-@import './generic/animations.scss';
+@import './helpers/reset';
+@import './helpers/vars';
+@import './helpers/mixins';
+@import './generic/fonts';
+@import './generic/typography';
+@import './generic/animations';
+
+@import './layout/grid';
+@import './layout/content';
+
+@import './partials/lines.scss';
+@import './partials/header';
+
+@import './pages/landing';
+
+#wpadminbar {display: none}

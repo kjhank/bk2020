@@ -54,11 +54,24 @@
   }
 }
 
-@mixin flex($direction, $justify-content, $align-items, $wrap: true) {
+@mixin flex($direction, $justify-content, $align-items, $wrap: nowrap) {
   display: flex;
-  flex-direction: $direction;
-  flex-wrap: $wrap;
+  flex-flow: $direction $wrap;
   justify-content: $justify-content;
   align-items: $align-items;
-  @content
+  @content;
+}
+
+@mixin gradient($orientation, $start-color, $end-color) {
+  background-color: mix($start-color, $end-color);
+
+  @if $orientation == 'vertical' {
+    background-image: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == 'horizontal' {
+    background-image: linear-gradient(to right, $start-color, $end-color);
+  } @else if $orientation == 'diagonal-tl' {
+    background-image: linear-gradient(to bottom right, $start-color, $end-color);
+  } @else if $orientation == 'diagonal-tr' {
+    background-image: linear-gradient(to bottom left, $start-color, $end-color);
+  }
 }

@@ -1,0 +1,26 @@
+.hero-section {
+  color: #fff;
+
+  &__heading {
+    font-size: 101px;
+    font-family: $font-family-serif;
+    line-height: 80px;
+  }
+
+  &__paragraph {
+    font-size: 22px;
+    width: 720px;
+  }
+
+  &__button {
+    border: 1px solid $color-highlight;
+    padding: 20px 15px;
+    @include flex(row, space-between, center) {
+      display: inline-flex;
+    }
+
+    &::after {
+      content: '->';
+    }
+  }
+}
