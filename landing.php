@@ -11,7 +11,7 @@ $content_section_2 = $content_landing['section-2'];
     <div class="container">
       <h2 class="hero-section__heading"><?= $content_section_0['heading']; ?></h2>
       <p class="hero-section__paragraph"><?= $content_section_0['paragraph']; ?></p>
-      <a href="<?= $content_section_0['button']['url'] ?>" class="hero-section__button"><?= $content_section_0['button']['text']; ?></a>
+      <a href="<?= $content_section_0['button']['url'] ?>" class="hero-section__button button button--front-white"><?= $content_section_0['button']['text']; ?></a>
     </div>
 
     <section class="hero-section__sub hero-sub">
@@ -55,11 +55,12 @@ $content_section_2 = $content_landing['section-2'];
     </div>
   </section>
   <section class="landing__section team-section" style="background-image: url(<?=$content_section_2['background-image']['url'];?>)">
-    <div class="container">
+    <div class="container team-section__container">
       <h3 class="team-section__brow"><?= $content_section_2['brow']; ?></h3>
       <h2 class="team-section__heading"><?= $content_section_2['heading']; ?></h2>
+      <div class="line team-section__line"></div>
       <p class="team-section__description"><?= $content_section_2['description']; ?></p>
-      <a href="<?= $content_section_2['button']['url']; ?>" class="team-section__button"><?= $content_section_2['button']['text']; ?></a>
+      <a href="<?= $content_section_2['button']['url']; ?>" class="team-section__button button"><?= $content_section_2['button']['text']; ?></a>
       <section class="team-section__members">
         <?php
         $members = $content_section_2['members'];
