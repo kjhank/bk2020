@@ -1,8 +1,10 @@
 .services-section {
   padding-top: 163px;
+  text-align: center;
   @include gradient(vertical, #e1e1e1, #fff);
 
   &__brow {
+    padding: 120px 0 27px;
     color: $color-highlight;
     text-transform: uppercase;
     font-weight: 700;
@@ -15,9 +17,15 @@
 
   &__line {
     width: 122px;
+    margin: 25px 0 30px;
+  }
+
+  &__description {
+    padding: 0 31%;
   }
 
   &__services {
+    margin: 55px 0 196px;
     @include flex(row, space-between, flex-start);
   }
 

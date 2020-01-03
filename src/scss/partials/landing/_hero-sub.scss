@@ -1,5 +1,9 @@
 .hero-sub {
+  margin: 240px 0 0;
+  background-image: radial-gradient(rgba($color-gradient-start, 0.6), rgba($color-gradient-end, 0.6));
+
   &__brow {
+    padding: 90px 0 25px;
     color: $color-highlight;
     text-transform: uppercase;
     font-weight: 700;
@@ -7,12 +11,14 @@
   }
 
   &__paragraph {
+    padding: 0 220px 0 0;
     font-size: $font-size-heading;
     font-family: $font-family-serif;
     line-height: 50px;
   }
 
   &__line {
+    margin: 40px 0 -63px;
     width: 105px;
   }
 
@@ -27,12 +33,13 @@
     height: 326px;
     background-color: #fff;
     color: $color-light;
-    padding: 30px 65px;
+    padding: 30px 30px 30px 65px;
 
     &-figure {
       background-color: $color-light;
       width: 80px;
       height: 80px;
+      margin: 0 0 25px;
     }
 
     &-icon {
@@ -49,7 +56,12 @@
 
     &-line {
       width: 107px;
+      margin: 25px 0;
       background-color: $color-light;
+    }
+
+    &-description {
+      line-height: 24px;
     }
 
     &--highlight {

@@ -3,11 +3,15 @@
 $color-lighter: #8c919b;
 $color-light: #555a5c;
 $color-foreground: #303537;
+$color-mid: #42474b;
 $color-highlight: #993671;
 $color-near-white: #fbfbfb;
 $color-shadow: rgba(#33393b, 0.25);
 $color-gradient-start: $color-foreground;
 $color-gradient-end: #525d63;
+$color-footer: #2f3537;
+$color-copyright: #98a0a8;
+$color-gray-c7: #c7c7c7;
 
 // fonts
 
@@ -20,6 +24,15 @@ $font-size-xl: 36px;
 $font-size-heading: 46px;
 $font-family-sans: 'Arial', sans-serif;
 $font-family-serif: 'Times', serif;
+
+// transitions
+
+$transition-time: .3s;
+$transition-time-m: .5s;
+$transition-function: ease-in-out;
+
+$tr: $transition-time $transition-function;
+$tr-m: $transition-time-m $transition-function;
 
 // container
 

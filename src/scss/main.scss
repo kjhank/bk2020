@@ -4,13 +4,16 @@
 @import './generic/fonts';
 @import './generic/typography';
 @import './generic/animations';
+@import './ui/_buttons';
 
 @import './layout/grid';
 @import './layout/content';
 
-@import './partials/lines.scss';
+@import './partials/lines';
 @import './partials/header';
 
 @import './pages/landing';
+
+@import './partials/footer/footer';
 
 #wpadminbar {display: none}

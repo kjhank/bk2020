@@ -1,0 +1,72 @@
+.team-section {
+  background-size: cover;
+  background-position: center;
+  
+  &__container {
+    @include flex(column, center, center);
+  }
+  &__brow {
+    margin: 71px 0 27px;
+    color: $color-highlight;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__heading {
+    font-size: $font-size-heading;
+    font-family: $font-family-serif;
+  }
+
+  &__line {
+    width: 105px;
+    margin: 17px 0 34px;
+  }
+
+  &__description {
+    width: 810px;
+    text-align: center;
+  }
+
+  &__button {
+    margin: 41px 0 50px;
+    padding: 22px 60px;
+  }
+
+  &__members {
+    width: 810px;
+    margin: 0 0 172px;
+    @include flex(row, space-between, flex-start);
+  }
+
+  &__single-member {
+    width: 383px;
+    height: 383px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include flex(row, center, flex-end);
+
+    &-wrapper {
+      width: 323px;
+      height: 92px;
+      border-bottom: 2px solid $color-highlight;
+      margin-bottom: -60px;
+      background-color: #fff;
+      text-align: center;
+      @include flex(column, center, center);
+    }
+
+    &-name {
+      font-size: 28px;
+      font-family: $font-family-serif;
+      line-height: 30px;
+    }
+
+    &-position {
+      color: $color-lighter;
+      font-size: $font-size-s;
+      line-height: 20px;
+      text-transform: uppercase;
+    }
+  }
+}
