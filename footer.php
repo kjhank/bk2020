@@ -1,10 +1,12 @@
 <?php
 $contact    = get_field('contact', 'option');
+$contact_form = substr($contact['cf7-shortcode'], 0, -1) . ' html_class="contact-form__inner"]';
 $footer     = get_field('main-footer', 'option');
 $map        = get_field('map', 'option');
 $copyright  = get_field('copyright', 'option');
 $logo       = get_field('main-logo', 'option');
 $class = is_front_page() == true ? ' main-footer--landing' : ' main-footer--page';
+$allowed_tags = '<div><label><input><span><textarea><form>'
 ?>
 </main>
 
@@ -16,7 +18,7 @@ $class = is_front_page() == true ? ' main-footer--landing' : ' main-footer--page
       <div class="line main-footer__line"></div>
       <div class="main-footer__paragraph"><?= $contact['paragraph']; ?></div>
     </div>
-    <section class="main-footer__contact-form contact-form"><?php echo do_shortcode($contact['cf7-shortcode']); ?></section>
+    <section class="main-footer__contact-form contact-form"><?php echo strip_tags(do_shortcode($contact_form), $allowed_tags); ?></section>
     <footer class="main-footer__info">
       <img src="<?= $logo['url']; ?>" alt="<?= $logo['alt']; ?>" class="main-footer__logo">
       <section class="main-footer__contact">

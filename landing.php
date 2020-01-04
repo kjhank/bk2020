@@ -37,7 +37,7 @@ $content_section_2 = $content_landing['section-2'];
     </section>
   </section>
   <section class="landing__section services-section">
-    <div class="container">
+    <div class="container services-section__container">
       <h3 class="services-section__brow"><?= $content_section_1['brow']; ?></h3>
       <h2 class="services-section__heading"><?= $content_section_1['heading']; ?></h2>
       <div class="line services-section__line"></div>
@@ -60,7 +60,7 @@ $content_section_2 = $content_landing['section-2'];
       <h2 class="team-section__heading"><?= $content_section_2['heading']; ?></h2>
       <div class="line team-section__line"></div>
       <p class="team-section__description"><?= $content_section_2['description']; ?></p>
-      <a href="<?= $content_section_2['button']['url']; ?>" class="team-section__button button"><?= $content_section_2['button']['text']; ?></a>
+      <a href="<?= $content_section_2['button']['url']; ?>" class="team-section__button button button--back-light"><?= $content_section_2['button']['text']; ?></a>
       <section class="team-section__members">
         <?php
         $members = $content_section_2['members'];
