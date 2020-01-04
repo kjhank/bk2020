@@ -20,6 +20,7 @@
   &__line {
     width: 105px;
     margin: 17px 0 34px;
+    background-color: $color-highlight;
   }
 
   &__description {
@@ -28,8 +29,10 @@
   }
 
   &__button {
+    width: 323px;
+    height: 53px;
     margin: 41px 0 50px;
-    padding: 22px 60px;
+    // padding: 22px 60px;
   }
 
   &__members {
@@ -45,6 +48,7 @@
     background-repeat: no-repeat;
     background-position: center;
     @include flex(row, center, flex-end);
+    @include shadow(10px, 20px, lighten($color-shadow, 50%));
 
     &-wrapper {
       width: 323px;
@@ -54,6 +58,7 @@
       background-color: #fff;
       text-align: center;
       @include flex(column, center, center);
+      @include shadow(5px, 15px, lighten($color-shadow, 50%));
     }
 
     &-name {

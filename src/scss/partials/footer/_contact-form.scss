@@ -1,6 +1,12 @@
 .contact-form {
+  $this: &!default;
+
   br {
     display: none;
+  }
+
+  &__inner {
+    @include flex(column, flex-start, flex-end);
   }
 
   &__label {
@@ -29,6 +35,17 @@
         background-color: transparent;
       }
     }
+
+    &--textarea {
+      height: 161px;
+      #{$this}__placeholder {
+        top: 15px;
+
+        &--active {
+          top: 8px;
+        }
+      }
+    }
   }
 
   &__placeholder {
@@ -39,11 +56,16 @@
     z-index: 1;
     font-size: $font-size-s;
     color: $color-lighter;
-    transition: font-size $tr, right $tr, top $tr, left $tr, transition $tr;
+    transition: font-size $tr-s, right $tr-s, top $tr-s, left $tr-s, transform $tr-s;
 
-    &--focused, &--filled {
+    &--active {
       font-size: $font-size-xs;
       top: 8px;
     }
+  }
+
+  &__submit {
+    margin: 20px 0 0;
+    cursor: pointer;
   }
 }

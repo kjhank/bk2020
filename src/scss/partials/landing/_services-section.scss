@@ -3,6 +3,10 @@
   text-align: center;
   @include gradient(vertical, #e1e1e1, #fff);
 
+  &__container {
+    @include flex(column, flex-start, center);
+  }
+
   &__brow {
     padding: 120px 0 27px;
     color: $color-highlight;
@@ -18,6 +22,7 @@
   &__line {
     width: 122px;
     margin: 25px 0 30px;
+    background-color: $color-highlight;
   }
 
   &__description {
@@ -25,6 +30,7 @@
   }
 
   &__services {
+    width: 100%;
     margin: 55px 0 196px;
     @include flex(row, space-between, flex-start);
   }
@@ -33,7 +39,7 @@
     width: 590px;
     height: 315px;
     @include flex(row, center, flex-end);
-    @include shadow(2px, 2px, $color-shadow);
+    @include shadow(10px, 20px, lighten($color-shadow, 50%));
 
     &-name {
       width: 527px;
@@ -44,7 +50,7 @@
       margin: 0 0 -56px;
       padding: 46px 55px;
       @include flex(row, space-between, center);
-      @include shadow(2px, 2px, $color-shadow);
+      @include shadow(5px, 15px, lighten($color-shadow, 50%));
 
       &::after {
         content: '->';

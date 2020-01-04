@@ -35,6 +35,10 @@
     color: $color-light;
     padding: 30px 30px 30px 65px;
 
+    &:last-child {
+      border-left: 1px solid $color-services-border;
+    }
+
     &-figure {
       background-color: $color-light;
       width: 80px;

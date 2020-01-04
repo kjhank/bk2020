@@ -12,6 +12,7 @@ $color-gradient-end: #525d63;
 $color-footer: #2f3537;
 $color-copyright: #98a0a8;
 $color-gray-c7: #c7c7c7;
+$color-services-border: #d5d7d7;
 
 // fonts
 
@@ -28,10 +29,12 @@ $font-family-serif: 'Times', serif;
 // transitions
 
 $transition-time: .3s;
+$transition-time-s: .2s;
 $transition-time-m: .5s;
 $transition-function: ease-in-out;
 
 $tr: $transition-time $transition-function;
+$tr-s: $transition-time-s $transition-function;
 $tr-m: $transition-time-m $transition-function;
 
 // container
