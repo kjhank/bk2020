@@ -1,0 +1,30 @@
+@import '../partials/team/team-members';
+
+.page-team {
+  &__container {
+    @include flex(column, flex-start, center);
+  }
+
+  &__heading {
+    padding: 40px 0 0;
+    color: $color-mid;
+    font-size: $font-size-heading;
+    font-family: $font-family-serif;
+  }
+
+  &__line {
+    width: 105px;
+    margin: 22px 0 30px;
+    background-color: $color-highlight;
+  }
+
+  &__description {
+    margin: 0 0 45px;
+    padding: 0 210px;
+    text-align: center;
+  }
+  
+  &__members {
+
+  }
+}

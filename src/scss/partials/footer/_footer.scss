@@ -94,6 +94,13 @@
     &-content {
       color: $color-lighter;
       font-size: $font-size-mid;
+
+      a {
+        transition: color $tr;
+        &:hover {
+          color: $color-highlight;
+        }
+      }
     }
   }
 
