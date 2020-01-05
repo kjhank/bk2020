@@ -47,14 +47,14 @@ $content_section_2 = $content_landing['section-2'];
         $services = $content_section_1['services'];
         foreach ($services as $service) :
         ?>
-          <article class="services-section__single-service" style="background-image: url(<?= $service['background-image']['url']; ?>)">
+          <article class="services-section__single-service" data-background="<?= $service['background-image']['url']; ?>">
             <h4 class="services-section__single-service-name"><?= $service['name']; ?></h4>
           </article>
         <?php endforeach; ?>
       </section>
     </div>
   </section>
-  <section class="landing__section team-section" style="background-image: url(<?=$content_section_2['background-image']['url'];?>)">
+  <section class="landing__section team-section" style="background-image: url(<?= $content_section_2['background-image']['url']; ?>)">
     <div class="container team-section__container">
       <h3 class="team-section__brow"><?= $content_section_2['brow']; ?></h3>
       <h2 class="team-section__heading"><?= $content_section_2['heading']; ?></h2>
@@ -65,7 +65,7 @@ $content_section_2 = $content_landing['section-2'];
         <?php
         $members = $content_section_2['members'];
         foreach ($members as $member) :; ?>
-          <article class="team-section__single-member" style="background-image: url(<?= $member['picture']['url']; ?>)">
+          <article class="team-section__single-member" data-background="<?= $member['picture']['url']; ?>">
             <div class="team-section__single-member-wrapper">
               <h4 class="team-section__single-member-name"><?= $member['name']; ?></h4>
               <h5 class="team-section__single-member-position"><?= $member['position']; ?></h5>
