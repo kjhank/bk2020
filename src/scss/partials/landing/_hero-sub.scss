@@ -19,12 +19,12 @@
 
   &__line {
     margin: 40px 0 -63px;
-    width: 105px;
   }
 
   &__services {
     position: relative;
-    bottom: -163px;
+    margin: 0 0 -163px;
+    padding: 163px 0 0;
     @include flex(row, space-between, flex-start);
   }
 

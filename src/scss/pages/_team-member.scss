@@ -1,0 +1,55 @@
+.team-member {
+  background-size: cover;
+  background-position: top -132px center;
+  margin: 0 0 -400px;
+  padding: 0 0 400px;
+
+  &__container {
+    @include flex(row, flex-end, flex-start);
+  }
+
+  &__wrapper {
+    width: 480px;
+  }
+
+  &__brow {
+    margin: 53px 0 26px;
+    color: $color-highlight;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  &__name {
+    font-size: $font-size-xl;
+    font-family: $font-family-serif;
+    line-height: 1;
+  }
+
+  &__line {
+    margin: 42px 0 36px;
+  }
+
+  &__description {
+    line-height: 24px;
+
+    & > p + p {
+      margin: 24px 0 0;
+    }
+  }
+
+  &__link {
+    height: 53px;
+    width: 217px;
+    margin: 85px 0 194px;
+    padding: 0 40px 0 36px;
+
+    &::after {
+      content: none;
+    }
+
+    &::before {
+      content: '<-';
+    }
+  }
+}

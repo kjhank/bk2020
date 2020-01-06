@@ -1,6 +1,7 @@
 .line {
-  height: 1px;
+  height: 2px;
   background-color: #fff;
+  width: 105px;
 
   &--highlight {
     background-color: $color-highlight;

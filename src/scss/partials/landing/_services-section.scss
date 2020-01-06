@@ -1,6 +1,7 @@
 .services-section {
-  padding-top: 163px;
+  padding: 163px 0 0;
   text-align: center;
+  
   @include gradient(vertical, #e1e1e1, #fff);
 
   &__container {
@@ -22,7 +23,6 @@
   &__line {
     width: 122px;
     margin: 25px 0 30px;
-    background-color: $color-highlight;
   }
 
   &__description {

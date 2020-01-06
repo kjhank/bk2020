@@ -4,6 +4,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
+  margin: 0 0 114px;
 
   &__group {
     &-name {
@@ -74,7 +75,7 @@
     }
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.02);
       @include shadow(25px, 35px, lighten($color-shadow, 50%));
 
       #{$this}__data {
