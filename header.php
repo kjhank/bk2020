@@ -30,13 +30,13 @@ $logo = get_field('main-logo', 'option');
       </h1>
       <?php
       wp_nav_menu(array(
-        'menu'  => 'top-menu',
+        'menu'            => 'top-menu',
         'theme-location'  => 'top-menu',
-        'container' => 'nav',
-        'container_class' =>  'main-header__navigation',
-        'fallback_cb' => false,
+        'container'       => 'nav',
+        'container_class' => 'main-header__navigation',
+        'fallback_cb'     => false,
         'custom_li_class' => 'main-header__navigation-item',
-        'menu_class'  => 'main-header__navigation-inner',
+        'menu_class'      => 'main-header__navigation-inner',
       ));
       ?>
     </div>

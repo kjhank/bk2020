@@ -6,7 +6,7 @@ $content_section_1 = $content_landing['section-1'];
 $content_section_2 = $content_landing['section-2'];
 ?>
 
-<section class="main-content__landing landing">
+<section class="main-content__landing landing" id="home">
   <section class="landing__section hero-section" style="background-image: url(<?= $content_section_0['background-image']['url'] ?>);">
     <div class="container">
       <h2 class="hero-section__heading"><?= $content_section_0['heading']; ?></h2>
@@ -14,7 +14,7 @@ $content_section_2 = $content_landing['section-2'];
       <a href="<?= $content_section_0['button']['url'] ?>" class="hero-section__button button button--front-white"><?= $content_section_0['button']['text']; ?></a>
     </div>
 
-    <section class="hero-section__sub hero-sub">
+    <section class="hero-section__sub hero-sub" id="about">
       <div class="container">
         <h3 class="hero-sub__brow"><?= $content_section_0['sub-heading']; ?></h3>
         <p class="hero-sub__paragraph"><?= $content_section_0['sub-paragraph']; ?></p>
@@ -27,7 +27,7 @@ $content_section_2 = $content_landing['section-2'];
             <article class="hero-sub__single-service <?php if ($service['highlight'] === true)  echo 'hero-sub__single-service--highlight'; ?>">
               <figure class="hero-sub__single-service-figure"><img src="<?= $service['icon']; ?>" alt="" class="hero-sub__single-service-icon"></figure>
               <h4 class="hero-sub__single-service-name"><?= $service['name']; ?></h4>
-              <div class="line hero-sub__single-service-line"></div>
+              <div class="line line--highlight hero-sub__single-service-line"></div>
               <p class="hero-sub__single-service-description"><?= $service['description']; ?></p>
             </article>
 
@@ -38,9 +38,9 @@ $content_section_2 = $content_landing['section-2'];
   </section>
   <section class="landing__section services-section">
     <div class="container services-section__container">
-      <h3 class="services-section__brow"><?= $content_section_1['brow']; ?></h3>
+      <h3 class="services-section__brow" id="specialization"><?= $content_section_1['brow']; ?></h3>
       <h2 class="services-section__heading"><?= $content_section_1['heading']; ?></h2>
-      <div class="line services-section__line"></div>
+      <div class="line line--highlight services-section__line"></div>
       <p class="services-section__description"><?= $content_section_1['description']; ?></p>
       <section class="services-section__services">
         <?php
@@ -54,11 +54,11 @@ $content_section_2 = $content_landing['section-2'];
       </section>
     </div>
   </section>
-  <section class="landing__section team-section" style="background-image: url(<?= $content_section_2['background-image']['url']; ?>)">
+  <section class="landing__section team-section" style="background-image: url(<?= $content_section_2['background-image']['url']; ?>)" id="team">
     <div class="container team-section__container">
       <h3 class="team-section__brow"><?= $content_section_2['brow']; ?></h3>
       <h2 class="team-section__heading"><?= $content_section_2['heading']; ?></h2>
-      <div class="line team-section__line"></div>
+      <div class="line line--highlight team-section__line"></div>
       <p class="team-section__description"><?= $content_section_2['description']; ?></p>
       <a href="<?= $content_section_2['button']['url']; ?>" class="team-section__button button button--back-light"><?= $content_section_2['button']['text']; ?></a>
       <section class="team-section__members">

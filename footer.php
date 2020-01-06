@@ -10,12 +10,12 @@ $allowed_tags = '<div><label><input><span><textarea><form>'
 ?>
 </main>
 
-<footer class="main-footer<?= $class;?>">
+<footer class="main-footer<?= $class;?>" id="contact">
   <div class="container main-footer__container">
     <div class="main-footer__wrapper">
       <h3 class="main-footer__brow"><?= $contact['brow']; ?></h3>
       <h2 class="main-footer__heading"><?= $contact['heading']; ?></h2>
-      <div class="line main-footer__line"></div>
+      <div class="line line--highlight main-footer__line"></div>
       <div class="main-footer__paragraph"><?= $contact['paragraph']; ?></div>
     </div>
     <section class="main-footer__contact-form contact-form"><?php echo strip_tags(do_shortcode($contact_form), $allowed_tags); ?></section>
@@ -34,7 +34,7 @@ $allowed_tags = '<div><label><input><span><textarea><form>'
     </footer>
   </div>
   <section class="main-footer__map-wrapper">
-    <iframe class= "main-footer__map" src="<?= $map['url']; ?>" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    <iframe class= "main-footer__map" data-src="<?= $map['url']; ?>" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
   </section>
   <div class="main-footer__copyright"><?= $copyright['content']; ?></div>
 </footer>

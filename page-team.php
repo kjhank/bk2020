@@ -8,7 +8,7 @@ $team_groups = $team_content['member-groups'];
 <section class="page-team" style="background-image: url(<?= $background['url']; ?>)">
   <div class="container page-team__container">
     <h1 class="page-team__heading"><?= $team_content['heading']; ?></h1>
-    <div class="line page-team__line"></div>
+    <div class="line line--highlight page-team__line"></div>
     <p class="page-team__description"><?= $team_content['description']; ?></p>
     <section class="page-team__team-members team-members">
       <?php
