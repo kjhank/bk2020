@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php
-/*Template name: strona zespołu*/
+/* Template name: strona zespołu */
 $team_content = get_field('team');
 $background = $team_content['background-image'];
 $team_groups = $team_content['member-groups'];

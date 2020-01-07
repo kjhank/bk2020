@@ -1,5 +1,24 @@
-<?php get_header(); ?>
-<?php
-  /*Template name: strona*/
+<?php get_header();
+/* Template name: strona specjalizacji */
+$content = get_field('specs');
+$type = 'grid-' . $content['type'];
+$list = $content[$type];
 ?>
+<section class="page-specializations">
+  <div class="container page-specializations__container">
+    <h2 class="page-specializations__brow"><?= $content['brow']; ?></h2>
+    <h1 class="page-specializations__heading"><?= $content['heading']; ?></h1>
+    <div class="line line--highlight page-specializations__line"></div>
+    <div class="page-specializations__description"><?= $description; ?></div>
+    <section class="page-specializations__grid page-specializations__grid--<?= $content['type']; ?>">
+      <?php foreach ($list as $spec) : ?>
+        <article class="page-specializations__single page-specializations__single--<?= $content['type']; ?>">
+          <a href="<?= get_permalink($spec['spec']); ?>" class="page-specializations__single-link">
+            <h2 class="page-specializations__single-name"><?= get_the_title($spec['spec']); ?></h2>
+          </a>
+        </article>
+      <?php endforeach; ?>
+    </section>
+  </div>
+</section>
 <?php get_footer(); ?>
