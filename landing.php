@@ -48,7 +48,7 @@ $content_section_2 = $content_landing['section-2'];
         foreach ($services as $service) :
         ?>
           <article class="services-section__single-service" data-background="<?= $service['background-image']['url']; ?>">
-            <h4 class="services-section__single-service-name"><?= $service['name']; ?></h4>
+            <h4 class="services-section__single-service-name"><a class="services-section__single-service-url" href="<?= $service['url']; ?>"><?= $service['name']; ?></a></h4>
           </article>
         <?php endforeach; ?>
       </section>
@@ -66,10 +66,10 @@ $content_section_2 = $content_landing['section-2'];
         $members = $content_section_2['members'];
         foreach ($members as $member) :; ?>
           <article class="team-section__single-member" data-background="<?= $member['picture']['url']; ?>">
-            <div class="team-section__single-member-wrapper">
+            <a class="team-section__single-member-wrapper" href="<?= $member['url']; ?>">
               <h4 class="team-section__single-member-name"><?= $member['name']; ?></h4>
               <h5 class="team-section__single-member-position"><?= $member['position']; ?></h5>
-            </div>
+            </a>
           </article>
         <?php endforeach; ?>
       </section>
