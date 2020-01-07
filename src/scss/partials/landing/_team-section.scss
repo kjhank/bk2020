@@ -1,4 +1,5 @@
 .team-section {
+  $this: &!default;
   background-size: cover;
   background-position: center;
   
@@ -30,7 +31,6 @@
     width: 323px;
     height: 53px;
     margin: 41px 0 50px;
-    // padding: 22px 60px;
   }
 
   &__members {
@@ -49,14 +49,26 @@
     @include shadow(10px, 20px, lighten($color-shadow, 50%));
 
     &-wrapper {
+      display: block;
       width: 323px;
       height: 92px;
       border-bottom: 2px solid $color-highlight;
       margin-bottom: -60px;
       background-color: #fff;
       text-align: center;
+      transition: background-color $tr, color $tr;
+      
       @include flex(column, center, center);
       @include shadow(5px, 15px, lighten($color-shadow, 50%));
+
+      &:hover {
+        background-color: $color-highlight;
+        color: #fff;
+
+        #{$this}__single-member-position {
+          color: #fff;
+        }
+      }
     }
 
     &-name {
@@ -70,6 +82,7 @@
       font-size: $font-size-s;
       line-height: 20px;
       text-transform: uppercase;
+      transition: color $tr;
     }
   }
 }

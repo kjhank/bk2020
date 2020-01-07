@@ -1,18 +1,40 @@
 .page-specializations {
+  $this: &!default;
+
+  background-size: cover;
+
+  &__container {
+    @include flex(column, flex-start, center);
+  }
+
   &__brow {
+    margin: 50px 0 27px;
+    color: $color-highlight;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
   &__heading {
+    font-size: $font-size-heading;
+    font-family: $font-family-serif;
   }
 
   &__line {
+    width: 122px;
+    margin: 23px 0 30px;
   }
 
   &__description {
+    padding: 0 255px;
+    text-align: center;
   }
 
   &__grid {
+    padding: 50px 0 123px;
+    width: 100%;
+
     @include flex(row, space-between, flex-start, wrap);
+
     &--business {
     }
 
@@ -25,6 +47,29 @@
     height: 111px;
     z-index: 1;
     background-color: #fff;
+    z-index: 1;
+    transition: color $tr;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      background-image: radial-gradient(circle at top right, #b26493, $color-highlight);
+      transition: opacity $tr;
+      z-index: 2;
+    }
+
+    &:hover {
+      color: #fff;
+
+      &::after {
+        opacity: 1;
+      }
+    }
 
     &:nth-child(n+4) {
       margin: 30px 0 0;
@@ -33,18 +78,20 @@
     @include shadow(10px, 20px, lighten($color-shadow, 50%));
 
     &-link {
-      display: block;
       width: 100%;
       height: 100%;
-      padding: 0 42px;
-      @include flex(row, center, center);
+      position: relative;
+      z-index: 3;
+
+      @include flex(row, flex-start, center);
     }
 
     &-name {
       font-size: 28px;
       font-family: $font-family-serif;
       line-height: 1;
-      text-align: center;
+      position: absolute;
+      padding: 0 42px;
     }
 
     &--business {

@@ -42,20 +42,46 @@
     @include shadow(10px, 20px, lighten($color-shadow, 50%));
 
     &-name {
+      position: relative;
       width: 527px;
       height: 111px;
       background-color: #fff;
       font-family: $font-family-serif;
       font-size: 28px;
       margin: 0 0 -56px;
-      padding: 46px 55px;
-      @include flex(row, space-between, center);
+      z-index: 1;
+      transition: background-color $tr, color $tr;
+
       @include shadow(5px, 15px, lighten($color-shadow, 50%));
 
       &::after {
         content: '->';
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
         color: $color-highlight;
+        z-index: 2;
+        transition: color $tr;
       }
+
+      &:hover {
+        background-color: $color-highlight;
+        color: #fff;
+
+        &::after {
+          color: #fff;
+        }
+      }
+    }
+
+    &-url {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 111px;
+      z-index: 3;
     }
   }
 }
