@@ -1,6 +1,7 @@
 import Form from './FormElements';
 import LazyLoad from './LazyLoad';
 import MenuScroll from './MenuScroll';
+import smoothscroll from 'smoothscroll-polyfill';
 
 class Core {
   constructor() {
@@ -18,6 +19,7 @@ class Core {
     new Form(formSelector);
     new LazyLoad(lazyLoadSelector);
     new MenuScroll(menuSelector);
+    smoothscroll.polyfill();
   }
 }
 

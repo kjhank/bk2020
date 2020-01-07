@@ -5,7 +5,7 @@ export default class MenuScroll {
       scrollConfig: {
         behavior: 'smooth'
       },
-      offset: '130'
+      offset: this.getOffset()
     };
 
     this.initEvents();
@@ -15,6 +15,12 @@ export default class MenuScroll {
     const { elements } = this.config;
 
     elements.forEach(elem => elem.addEventListener('click', e => this.scroll(e)));
+  }
+
+  getOffset() {
+    const headerOffset = document.querySelector('.main-header').getBoundingClientRect().height;
+
+    return headerOffset;
   }
 
   scroll(e) {
