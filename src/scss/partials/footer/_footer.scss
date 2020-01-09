@@ -26,9 +26,6 @@
 
   &__brow {
     margin: 90px 0 30px;
-    color: $color-highlight;
-    font-weight: 700;
-    text-transform: uppercase;
   }
 
   &__line {
@@ -119,5 +116,9 @@
     color: $color-copyright;
     font-size: $font-size-s;
     padding: 25px 0;
+  }
+
+  & .main-logo {
+    width: 530px;
   }
 }

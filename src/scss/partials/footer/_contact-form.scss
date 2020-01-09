@@ -65,7 +65,19 @@
   }
 
   &__submit {
+    position: relative;
     margin: 20px 0 0;
+    padding: 20px 77px 20px 40px;
     cursor: pointer;
+
+    .icon {
+      &--arrow {
+        position: absolute;
+        top: 50%;
+        right: 33px;
+        transform: translateY(-50%);
+        fill: currentColor;
+      }
+    }
   }
 }

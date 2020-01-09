@@ -5,11 +5,13 @@
 @import './generic/typography';
 @import './generic/animations';
 @import './ui/_buttons';
+@import './ui/icons';
 
 @import './layout/grid';
 @import './layout/content';
 
-@import './partials/lines';
+@import './partials/line';
+@import './partials/brow';
 @import './partials/header';
 
 @import './pages/landing';

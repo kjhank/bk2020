@@ -8,7 +8,6 @@
   height: 132px;
   background-color: #fff;
   @include flex(row, center, center);
-  // @include shadow(0, 3px, $color-shadow);
 
   &__wrapper {
     @include flex(row, space-between, center);
@@ -16,15 +15,12 @@
 
   &__navigation {
     &-item {
-      // position: relative;
       display: inline-block;
       font-weight: 700;
       font-size: $font-size-mid;
       text-decoration: none;
       padding: 16px;
       text-transform: uppercase;
-
-
 
     a {
       position: relative;
@@ -52,37 +48,38 @@
     }
 
       &--contact {
+        position: relative;
         margin-left: 15px;
         padding: 0;
+        border: 1px solid $color-highlight;
+        color: $color-highlight;
+        transition: color $tr, background-color $tr, border-color $tr;
+
+        &:hover {
+          color: #fff;
+          border-color: #fff;
+          background-color: $color-highlight;
+        }
 
         a {
+          position: relative;
+          width: 163px;
+          height: 53px;
           padding: 23px 30px;
-          color: $color-highlight;
-          border: 1px solid $color-highlight;
           display: inline-flex;
           align-items: center;
-          justify-content: center;
-          transition: color $tr, background-color $tr, border-color $tr;
-        
-          &::after {
-            content: '->';
-            transform: unset;
-            position: unset;
-            height: unset;
-            width: unset;
-            background-color: unset;
-            transform-origin: unset;
-            transition: unset;
-          }
+          justify-content: flex-start;
+        }
 
-          &:hover {
-            color: #fff;
-            border-color: #fff;
-            background-color: $color-highlight;
+        .icon {
+          &--arrow {
+            position: absolute;
+            top: 50%;
+            right: 28px;
+            transform: translateY(-50%);
+            fill: currentColor;
 
-            &::after {
-              content: '->';
-            }
+            transition: color $tr;
           }
         }
       }
@@ -114,7 +111,7 @@
         }
       }
 
-      &.current-menu-item {
+      &--home {
         color: $color-highlight;
       }
     }
@@ -123,4 +120,20 @@
   &__logo, &__url {
     display: block;
   }
+
+  &__logo {
+    width: 390px;
+    height: 100px;
+  }
+
+  &__url {
+    width: 100%;
+    height: 100%;
+  }
+
+  & .main-logo {
+    width: 100%;
+    height: 100%;
+  }
+  
 }

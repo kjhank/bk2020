@@ -8,9 +8,6 @@
   }
   &__brow {
     margin: 71px 0 27px;
-    color: $color-highlight;
-    text-transform: uppercase;
-    font-weight: 700;
   }
 
   &__heading {
@@ -28,9 +25,21 @@
   }
 
   &__button {
+    position: relative;
     width: 323px;
     height: 53px;
     margin: 41px 0 50px;
+
+    & .icon {
+      &--arrow {
+        position: absolute;
+        top: 50%;
+        right: 62px;
+        transform: translateY(-50%);
+        fill: currentColor;
+        transition: fill $tr;
+      }
+    }
   }
 
   &__members {
@@ -49,6 +58,7 @@
     @include shadow(10px, 20px, lighten($color-shadow, 50%));
 
     &-wrapper {
+      position: relative;
       display: block;
       width: 323px;
       height: 92px;
@@ -56,14 +66,34 @@
       margin-bottom: -60px;
       background-color: #fff;
       text-align: center;
-      transition: background-color $tr, color $tr;
+      z-index: 1;
+      transition: border-color $tr, color $tr;
       
       @include flex(column, center, center);
       @include shadow(5px, 15px, lighten($color-shadow, 50%));
 
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% + 2px);
+        background-image: radial-gradient(circle at top right, #b26493, $color-highlight);
+        opacity: 0;
+        z-index: 2;
+        transition: opacity $tr;
+      }
+
       &:hover {
-        background-color: $color-highlight;
         color: #fff;
+        border-color: transparent;
+
+        &::after {
+          opacity: 1;
+        }
 
         #{$this}__single-member-position {
           color: #fff;
@@ -72,17 +102,21 @@
     }
 
     &-name {
+      position: relative;
       font-size: 28px;
       font-family: $font-family-serif;
       line-height: 30px;
+      z-index: 3;
     }
 
     &-position {
+      position: relative;
       color: $color-lighter;
       font-size: $font-size-s;
       line-height: 20px;
       text-transform: uppercase;
       transition: color $tr;
+      z-index: 3;
     }
   }
 }

@@ -34,6 +34,7 @@
     z-index: 1;
     transition: transform $tr, box-shadow $tr;
 
+    @include flex(row, center, flex-end);
     @include shadow(10px, 20px, lighten($color-shadow, 50%));
 
     &:nth-child(3n + 1) {
@@ -45,42 +46,66 @@
     }
 
     &-link {
+      position: relative;
       display: block;
       width: 100%;
       height: 100%;
+      z-index: 3;
 
-      @include flex(row, center, flex-end);
+      @include flex(column, center, center);
     }
 
     &-data {
+      position: relative;
       width: 323px;
       height: 92px;
       margin: 0 0 -40px;
       background-color: #fff;
-      border-bottom: 1px solid $color-highlight;
-      transition: box-shadow $tr;
+      border-bottom: 2px solid $color-highlight;
+      transition: box-shadow $tr, border-color $tr;
+      z-index: 1;
 
-      @include flex(column, center, center);
       @include shadow(5px, 15px, lighten($color-shadow, 50%));
+
+      &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% + 2px);
+        background-image: radial-gradient(circle at top right, #b26493, $color-highlight);
+        opacity: 0;
+        z-index: 2;
+        transition: opacity $tr;
+      }
+
+      &:hover {
+        color: #fff;
+        border-color: transparent;
+
+        &::after {
+          opacity: 1;
+        }
+
+        #{$this}__member-position {
+          color: #fff;
+        }
+      }
     }
 
     &-name {
       font-family: $font-family-serif;
       font-size: 28px;
+      transition: color $tr;
     }
 
     &-position {
       font-size: $font-size-s;
       color: $color-lighter;
-    }
-
-    &:hover {
-      transform: scale(1.02);
-      @include shadow(25px, 35px, lighten($color-shadow, 50%));
-
-      #{$this}__data {
-        @include shadow(15px, 25px, lighten($color-shadow, 50%));
-      }
+      transition: color $tr;
     }
   }
 }

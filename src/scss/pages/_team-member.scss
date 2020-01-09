@@ -14,9 +14,6 @@
 
   &__brow {
     margin: 53px 0 26px;
-    color: $color-highlight;
-    font-weight: 700;
-    text-transform: uppercase;
     line-height: 1;
   }
 
@@ -27,7 +24,7 @@
   }
 
   &__line {
-    margin: 42px 0 36px;
+    margin: 35px 0 30px;
   }
 
   &__description {
@@ -39,17 +36,20 @@
   }
 
   &__link {
+    position: relative;
     height: 53px;
     width: 217px;
     margin: 85px 0 194px;
-    padding: 0 40px 0 36px;
+    padding: 20px 20px 20px 79px;
 
-    &::after {
-      content: none;
-    }
-
-    &::before {
-      content: '<-';
+    & .icon {
+      &--arrow {
+        position: absolute;
+        top: 50%;
+        left: 36px;
+        transform: translateY(-50%) rotate(180deg);
+        fill: currentColor;
+      }
     }
   }
 }

@@ -16,6 +16,17 @@
   }
 
   &__button {
-    padding: 20px 15px;
+    width: 244px;
+    padding: 21px 30px;
+    line-height: 1;
+
+    & .icon {
+      &--arrow {
+        top: 50%;
+        right: 31px;
+        transform: translateY(-50%);
+        fill: $color-hero-arrow;
+      }
+    }
   }
 }
