@@ -24,12 +24,12 @@ $team_groups = $team_content['member-groups'];
               $url = str_replace('/team-members/', '/', get_permalink($id));
               ?>
               <article class="team-members__member" data-background="<?= $data['image']['url']; ?>">
-                <a href="<?= $url; ?>" class="team-members__member-link">
-                  <div class="team-members__member-data">
+                <div class="team-members__member-data">
+                  <a href="<?= $url; ?>" class="team-members__member-link">
                     <h3 class="team-members__member-name"><?= $data['name']; ?></h3>
                     <h4 class="team-members__member-position"><?= $data['brow']; ?></h4>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </article>
             <?php endforeach; ?>
           </div>

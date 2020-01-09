@@ -25,7 +25,7 @@ $logo = get_field('main-logo', 'option');
     <div class="container main-header__wrapper">
       <h1 class="main-header__logo">
         <a href="<?= $home_url; ?>" class="main-header__url">
-          <img src="<?= $logo['url'] ?>" alt="<?= $logo['alt']; ?>" class="main-header__logo">
+        <?php include get_attached_file($logo);?>
         </a>
       </h1>
       <?php
