@@ -19,7 +19,7 @@ function unload_block_library()
   wp_dequeue_style('wp-block-library');
 }
 
-function allow_svg_upload()
+function allow_svg_upload($mimes)
 {
   $mimes['svg'] = 'image/svg+xml';
   return $mimes;
