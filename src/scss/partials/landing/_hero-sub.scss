@@ -75,4 +75,91 @@
       }
     }
   }
+
+  @include rwd(m) {
+    margin: 160px 0 0;
+
+    &__brow {
+      padding: 60px 0 17px;
+    }
+
+    &__paragraph {
+      padding: 0 35% 0 0;
+      font-size: 31px;
+      line-height: 35px;
+    }
+
+    &__line {
+      margin: 25px 0 -42px;
+    }
+
+    &__services {
+      margin: 0 0 -110px;
+      padding: 110px 0 0;
+    }
+
+    &__single-service {
+      height: 230px;
+      padding: 20px 20px 20px 42px;
+
+      &-figure {
+        width: 54px;
+        height: 54px;
+        margin: 0 0 17px;
+      }
+
+      &-name {
+        font-size: 22px;
+      }
+
+      &-line {
+        width: 71px;
+        margin: 17px 0;
+      }
+
+      &-description {
+        line-height: 16px;
+      }
+    }
+  }
+
+  @include rwd(xs) {
+    margin: 50px 0 0;
+
+    &__container {
+      @include flex(row, space-between, center);
+    }
+
+    &__wrapper {
+      flex: 1;
+    }
+
+    &__brow {
+      padding: 15px 0;
+    }
+
+    &__paragraph {
+      padding: 0;
+    }
+
+    &__line {
+      margin: 15px 0;
+    }
+
+    &__services {
+      @include flex(column, stretch, stretch);
+      margin: -50px 0;
+      padding: 0;
+      flex: 1;
+    }
+
+    &__single-service {
+      width: 100%;
+
+      &:last-child {
+        border-left: none;
+        border-top: 1px solid $color-services-border;
+      }
+    }
+  }
 }

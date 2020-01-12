@@ -3,4 +3,14 @@
   max-width: $container-width;
   padding: 0 $container-padding;
   margin: auto;
+
+  @include rwd(m) {
+    max-width: 1200px;
+    padding: 0 30px;
+  }
+
+  @include rwd(s) {
+    max-width: 1000px;
+    padding: 0 50px;
+  }
 }

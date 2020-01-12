@@ -1,4 +1,8 @@
 .main-content {
   padding: 132px 0 0;
   color: $color-foreground;
+
+  @include rwd(m) {
+    padding: 88px 0 0;
+  }
 }

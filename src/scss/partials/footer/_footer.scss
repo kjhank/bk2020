@@ -67,7 +67,7 @@
   }
 
   &__contact {
-    width: 100%;
+    // width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,6 +119,65 @@
   }
 
   & .main-logo {
-    width: 530px;
+    width: 350px;
+  }
+
+  @include rwd(m) {
+    &__brow {
+      margin: 60px 0 20px
+    }
+
+    &__heading {
+      font-size: $font-size-heading * 2/3;
+    }
+
+    &__line {
+      margin: 17px 0 33px;
+    }
+
+    &__wrapper {
+      width: 40%;
+    }
+
+    &__paragraph {
+      font-size: $font-size-xl * 2/3;
+    }
+
+    &__contact-form {
+      width: 42%;
+      margin: 93px 0 70px;
+    }
+
+    &__info {
+      height: 144px;
+      justify-content: space-around;
+      margin: 0 0 -72px;
+      padding: 0;
+    }
+
+    &__contact {
+      &-item {
+        padding: 0 30px;
+      }
+
+      &-heading {
+        font-size: 16px;
+      }
+
+      &-content {
+        font-size: $font-size-mid * 2/3;
+      }
+    }
+
+    &__map {
+      &-wrapper {
+        height: 300px;
+      }
+    }
+
+    &__copyright {
+      padding: 17px 0;
+      font-size: $font-size-s * 2/3;
+    }
   }
 }

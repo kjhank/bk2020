@@ -3,5 +3,10 @@
     position: absolute;
     width: 30px;
     height: 20px;
+
+    @include rwd(m) {
+      width: 20px;
+      height: 13px;
+    }
   }
 }

@@ -1,8 +1,9 @@
 .team-member {
-  background-size: cover;
-  background-position: top -132px center;
   margin: 0 0 -400px;
   padding: 0 0 400px;
+  background-size: cover;
+  background-position: top -132px center;
+  background-repeat: no-repeat;
 
   &__container {
     @include flex(row, flex-end, flex-start);
@@ -50,6 +51,60 @@
         transform: translateY(-50%) rotate(180deg);
         fill: currentColor;
       }
+    }
+  }
+
+  @include rwd(m) {
+    background-size: 100%;
+    background-position: top -88px center;
+
+    &__wrapper {
+      width: 40%;
+      margin: 0 5% 0 0;
+    }
+
+    &__brow {
+      margin: 35px 0 17px;
+    }
+
+    &__name {
+      font-size: $font-size-xl * 2/3;
+    }
+
+    &__line {
+      margin: 23px 0 20px;
+    }
+
+    &__description {
+      line-height: 16px;
+
+      & > p + p {
+        margin: 16px 0 0;
+      }
+    }
+
+    &__link {
+      width: 145px;
+      height: 35px;
+      margin: 57px 0 129px;
+      padding: 13px 13px 13px 53px;
+
+      & .icon {
+        &--arrow {
+          left: 24px;
+        }
+      }
+    }
+  }
+
+  @include rwd(s) {
+    &__wrapper {
+      width: 45;
+      margin: 0;
+    }
+
+    &__link {
+      margin: 20px 0 40px;
     }
   }
 }

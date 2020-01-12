@@ -6,6 +6,7 @@
   &__container {
     @include flex(column, center, center);
   }
+
   &__brow {
     margin: 71px 0 27px;
   }
@@ -63,7 +64,7 @@
       width: 323px;
       height: 92px;
       border-bottom: 2px solid $color-highlight;
-      margin-bottom: -60px;
+      margin: 0 0 -60px;
       background-color: #fff;
       text-align: center;
       z-index: 1;
@@ -117,6 +118,76 @@
       text-transform: uppercase;
       transition: color $tr;
       z-index: 3;
+    }
+  }
+
+  @include rwd(m) {
+    &__brow {
+      margin: 47px 0 18px;
+    }
+
+    &__heading {
+      font-size: $font-size-heading * 2/3;
+    }
+
+    &__line {
+      margin: 12px 0 23px;
+    }
+
+    &__description {
+      width: 55%;
+    }
+
+    &__button {
+      width: 215px;
+      padding: 12px 25px;
+
+      & .icon {
+        &--arrow {
+          right: 25px;
+        }
+      }
+    }
+
+    &__members {
+      width: 55%;
+      margin: 0 0 115px;
+    }
+
+    &__single-member {
+      width: 280px;
+      height: 280px;
+
+      &-wrapper {
+        width: 90%;
+        height: 61px;
+        margin: 0 0 -35px;
+      }
+
+      &-name {
+        font-size: 19px;
+      }
+
+      &-position {
+        font-size: $font-size-s * 2/3;
+      }
+    }
+  }
+
+  @include rwd(s) {
+    &__description {
+      width: 75%;
+    }
+
+    &__members {
+      width: 70%;
+    }
+  }
+
+  @include rwd(xs) {
+    &__single-member {
+      width: 200px;
+      height: 200px;
     }
   }
 }

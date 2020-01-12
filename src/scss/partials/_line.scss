@@ -6,4 +6,8 @@
   &--highlight {
     background-color: $color-highlight;
   }
+
+  @include rwd(m) {
+    width: 70px;
+  }
 }

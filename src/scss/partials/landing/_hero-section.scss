@@ -29,4 +29,41 @@
       }
     }
   }
+
+  @include rwd(m) {
+    &__heading {
+      width: 55%;
+      padding: 80px 0 30px;
+      font-size: 85px;
+      line-height: 70px;
+    }
+
+    &__paragraph {
+      width: 55%;
+      padding: 0 0 30px;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    &__button {
+      width: 190px;
+      padding: 17px 20px;
+
+      & .icon {
+        &--arrow {
+          right: 17px;
+        }
+      }
+    }
+  }
+
+  @include rwd(xs) {
+    &__container {
+      @include flex(row, space-between, center, wrap);
+    }
+
+    &__heading {
+      width: 100%;
+    }
+  }
 }

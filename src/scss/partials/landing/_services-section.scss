@@ -5,7 +5,7 @@
   
   @include gradient(vertical, #e1e1e1, #fff);
 
-  &__container {
+  &__wrapper {
     @include flex(column, flex-start, center);
   }
 
@@ -36,6 +36,9 @@
   &__single-service {
     width: 590px;
     height: 315px;
+    background-size: cover;
+    z-index: 1;
+
     @include flex(row, center, flex-end);
     @include shadow(10px, 20px, lighten($color-shadow, 50%));
 
@@ -105,4 +108,84 @@
       text-align: left;
     }
   }
+
+  @include rwd(m) {
+    padding: 110px 0 0;
+
+    &__brow {
+      padding: 80px 0 18px;
+    }
+
+    &__heading {
+      font-size: $font-size-heading * 2/3;
+    }
+
+    &__line {
+      width: 81px;
+      margin: 17px 0 20px;
+    }
+
+    &__services {
+      margin: 37px 0 130px;
+      justify-content: space-around;
+    }
+
+    &__single-service {
+      width: 40%;
+      height: 210px;
+
+      &-name {
+        width: 85%;
+        height: 74px;
+        font-size: 28px * 2/3;
+        margin: 0 0 -37px;
+      }
+
+      &-url {
+        line-height: 74px;
+      }
+    }
+  }
+
+  @include rwd(xs) {
+    padding: 50px 0;
+
+    &__container {
+      @include flex(row-reverse, space-around, center)
+    }
+
+    &__wrapper {
+      flex: 1;
+      margin-top: -37px;
+    }
+
+    &__brow {
+      padding: 15px 0;
+    }
+
+    &__description {
+      padding: 0 15px;
+      font-size: $font-size-mid;
+    }
+
+    &__line {
+      margin: 15px 0;
+    }
+
+    &__services {
+      flex: 1;
+      margin: 50px 0 87px;
+
+      @include flex(column, center, center);
+    }
+
+    &__single-service {
+      width: 100%;
+
+      & + & {
+        margin: 87px 0 0;
+      }
+    }
+  }
+
 }

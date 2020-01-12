@@ -1,4 +1,12 @@
 body {
   font-family: $font-family-sans;
   font-size: $font-size-base;
+
+  @include rwd(m) {
+    font-size: 14px;
+  }
+
+  @include rwd(s) {
+    font-size: 12px;
+  }
 }
