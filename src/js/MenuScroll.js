@@ -1,5 +1,7 @@
 export default class MenuScroll {
   constructor(selector) {
+    if (!this.checkVars(selector)) return;
+
     this.config = {
       elements: document.querySelectorAll(selector),
       scrollConfig: {
@@ -9,6 +11,12 @@ export default class MenuScroll {
     };
 
     this.initEvents();
+  }
+
+  checkVars(selector) {
+    const elements = document.querySelectorAll(selector);
+
+    return elements.length;
   }
 
   initEvents() {

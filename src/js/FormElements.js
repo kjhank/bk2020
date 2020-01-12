@@ -1,5 +1,7 @@
 export default class Form {
   constructor(selector) {
+    if (!this.checkVars(selector)) return;
+    
     this.config = {
       formElem: document.querySelector(selector),
       inputSelector: '.contact-form__input',
@@ -10,8 +12,17 @@ export default class Form {
     this.init();
   }
 
+  checkVars(selector) {
+    const elements = document.querySelectorAll(selector);
+
+    return elements.length;
+  }
+
   init() {
     const { formElem, inputSelector } = this.config;
+
+    if (!formElem) return;
+    
     this.inputs = formElem.querySelectorAll(inputSelector);
     this.initEvents();
   }

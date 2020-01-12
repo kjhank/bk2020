@@ -1,5 +1,7 @@
 export default class CustomizeMenu {
   constructor(selector) {
+    if (!this.checkVars(selector)) return;
+
     this.element = document.querySelector(selector);
     this.config = {
       arrow:
@@ -8,7 +10,15 @@ export default class CustomizeMenu {
     this.init();
   }
 
+  checkVars(selector) {
+    const elements = document.querySelectorAll(selector);
+
+    return elements.length;
+  }
+
   init() {
+    if (!this.element) return;
+    
     this.addArrow();
   }
 

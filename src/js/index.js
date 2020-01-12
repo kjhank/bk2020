@@ -15,7 +15,7 @@ class Core {
 
     this.init();
   }
-
+  
   init() {
     const { formSelector, lazyLoadSelector, menuSelector, navSelector } = this.config;
     new Form(formSelector);

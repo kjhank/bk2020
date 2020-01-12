@@ -1,5 +1,7 @@
 export default class LazyLoad {
   constructor(selector) {
+    if (!this.checkVars(selector)) return;
+    
     this.config = {
       selector,
       observerConfig: {
@@ -10,9 +12,18 @@ export default class LazyLoad {
     this.init();
   }
 
+  checkVars(selector) {
+    const elements = document.querySelectorAll(selector);
+
+    return elements.length;
+  }
+
   init() {
     const { selector, observerConfig } = this.config;
     const elements = document.querySelectorAll(selector);
+    
+    if (!elements) return;
+
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
