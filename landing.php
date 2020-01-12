@@ -12,7 +12,7 @@ $arrow = get_field('icon-arrow', 'option');
     <div class="container">
       <h2 class="hero-section__heading"><?= $content_section_0['heading']; ?></h2>
       <p class="hero-section__paragraph"><?= $content_section_0['paragraph']; ?></p>
-      <a href="<?= $content_section_0['button']['url'] ?>" class="hero-section__button button button--front-white"><?= $content_section_0['button']['text']; ?><?php include get_attached_file($arrow); ?></a>
+      <a href="<?= $content_section_0['button']['url'] ?>" class="hero-section__button button button--front-white"><?= $content_section_0['button']['text']; ?><?= file_get_contents(get_attached_file($arrow)); ?></a>
     </div>
 
     <section class="hero-section__sub hero-sub" id="about">
@@ -26,7 +26,7 @@ $arrow = get_field('icon-arrow', 'option');
           foreach ($services as $service) :
           ?>
             <article class="hero-sub__single-service <?php if ($service['highlight'] === true)  echo 'hero-sub__single-service--highlight'; ?>">
-              <figure class="hero-sub__single-service-figure"><?php include get_attached_file($service['icon']); ?></figure>
+              <figure class="hero-sub__single-service-figure"><?= file_get_contents(get_attached_file($service['icon'])); ?></figure>
               <h4 class="hero-sub__single-service-name"><?= $service['name']; ?></h4>
               <div class="line line--highlight hero-sub__single-service-line"></div>
               <p class="hero-sub__single-service-description"><?= $service['description']; ?></p>
@@ -48,19 +48,19 @@ $arrow = get_field('icon-arrow', 'option');
         foreach ($services as $service) :
         ?>
           <article class="services-section__single-service" data-background="<?= $service['background-image']['url']; ?>">
-            <h4 class="services-section__single-service-name"><a class="services-section__single-service-url" href="<?= $service['url']; ?>"><?= $service['name']; ?></a><?php include get_attached_file($arrow); ?></h4>
+            <h4 class="services-section__single-service-name"><a class="services-section__single-service-url" href="<?= $service['url']; ?>"><?= $service['name']; ?></a><?= file_get_contents(get_attached_file($arrow)); ?></h4>
           </article>
         <?php endforeach; ?>
       </section>
     </div>
   </section>
-  <section class="landing__section team-section" style="background-image: url(<?= $content_section_2['background-image']['url']; ?>)" id="team">
+  <section class="landing__section team-section" data-background="<?= $content_section_2['background-image']['url']; ?>" id="team">
     <div class="container team-section__container">
       <h3 class="team-section__brow brow"><?= $content_section_2['brow']; ?></h3>
       <h2 class="team-section__heading"><?= $content_section_2['heading']; ?></h2>
       <div class="line line--highlight team-section__line"></div>
       <p class="team-section__description"><?= $content_section_2['description']; ?></p>
-      <a href="<?= $content_section_2['button']['url']; ?>" class="team-section__button button button--back-light"><?= $content_section_2['button']['text']; ?><?php include get_attached_file($arrow); ?></a>
+      <a href="<?= $content_section_2['button']['url']; ?>" class="team-section__button button button--back-light"><?= $content_section_2['button']['text']; ?><?= file_get_contents(get_attached_file($arrow)); ?></a>
       <section class="team-section__members">
         <?php
         $members = $content_section_2['members'];

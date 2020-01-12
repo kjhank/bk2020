@@ -17,7 +17,7 @@ $arrow = get_field('icon-arrow', 'option');
         <article class="page-specializations__single page-specializations__single--<?= $content['type']; ?>">
           <a href="<?= get_permalink($spec['spec']); ?>" class="page-specializations__single-link">
             <h2 class="page-specializations__single-name"><?= get_the_title($spec['spec']); ?></h2>
-            <?php include get_attached_file($arrow); ?>
+            <?= file_get_contents(get_attached_file($arrow)); ?>
           </a>
         </article>
       <?php endforeach; ?>

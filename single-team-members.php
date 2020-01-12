@@ -14,7 +14,7 @@ $arrow = get_field('icon-arrow', 'option');
       <h1 class="team-member__name"><?= $data['name']; ?></h1>
       <div class="line line--highlight team-member__line"></div>
       <section class="team-member__description"><?= $data['description']; ?></section>
-      <a href="<?= $data['button']['url']; ?>" class="team-member__link button"><?= $data['button']['text']; ?><?php include get_attached_file($arrow); ?></a>
+      <a href="<?= $data['button']['url']; ?>" class="team-member__link button"><?= $data['button']['text']; ?><?= file_get_contents(get_attached_file($arrow)); ?></a>
     </div>
   </div>
 </section>

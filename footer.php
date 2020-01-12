@@ -20,7 +20,7 @@ $allowed_tags = '<div><label><input><span><textarea><form><button><svg><path><?x
     </div>
     <section class="main-footer__contact-form contact-form"><?php echo strip_tags(do_shortcode($contact_form), $allowed_tags); ?></section>
     <footer class="main-footer__info">
-      <?php include get_attached_file($logo);?>
+      <?= file_get_contents(get_attached_file($logo));?>
       <section class="main-footer__contact">
         <?php
         foreach ($footer as $item) :
