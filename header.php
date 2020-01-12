@@ -3,7 +3,7 @@ $home_url = get_home_url();
 $logo = get_field('main-logo', 'option');
 ?>
 <!doctype html>
-<html lang="pl" style="margin-top: unset !important /* TODO: delete */">
+<html lang="<?= pll_current_language(); ?>">
 
 <head>
   <meta charset="utf-8">
