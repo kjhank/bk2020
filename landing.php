@@ -9,17 +9,19 @@ $arrow = get_field('icon-arrow', 'option');
 
 <section class="main-content__landing landing" id="home">
   <section class="landing__section hero-section" style="background-image: url(<?= $content_section_0['background-image']['url'] ?>);">
-    <div class="container">
+    <div class="container hero-section__container">
       <h2 class="hero-section__heading"><?= $content_section_0['heading']; ?></h2>
       <p class="hero-section__paragraph"><?= $content_section_0['paragraph']; ?></p>
       <a href="<?= $content_section_0['button']['url'] ?>" class="hero-section__button button button--front-white"><?= $content_section_0['button']['text']; ?><?= file_get_contents(get_attached_file($arrow)); ?></a>
     </div>
 
     <section class="hero-section__sub hero-sub" id="about">
-      <div class="container">
-        <h3 class="hero-sub__brow brow"><?= $content_section_0['sub-heading']; ?></h3>
-        <p class="hero-sub__paragraph"><?= $content_section_0['sub-paragraph']; ?></p>
-        <div class="line line--highlight hero-sub__line"></div>
+      <div class="container hero-sub__container">
+        <div class="hero-sub__wrapper">
+          <h3 class="hero-sub__brow brow"><?= $content_section_0['sub-heading']; ?></h3>
+          <p class="hero-sub__paragraph"><?= $content_section_0['sub-paragraph']; ?></p>
+          <div class="line line--highlight hero-sub__line"></div>
+        </div>
         <section class="hero-sub__services">
           <?php
           $services = $content_section_0['services'];
@@ -38,10 +40,12 @@ $arrow = get_field('icon-arrow', 'option');
   </section>
   <section class="landing__section services-section">
     <div class="container services-section__container">
-      <h3 class="services-section__brow brow" id="specialization"><?= $content_section_1['brow']; ?></h3>
-      <h2 class="services-section__heading"><?= $content_section_1['heading']; ?></h2>
-      <div class="line line--highlight services-section__line"></div>
-      <p class="services-section__description"><?= $content_section_1['description']; ?></p>
+      <div class="services-section__wrapper">
+        <h3 class="services-section__brow brow" id="specialization"><?= $content_section_1['brow']; ?></h3>
+        <h2 class="services-section__heading"><?= $content_section_1['heading']; ?></h2>
+        <div class="line line--highlight services-section__line"></div>
+        <p class="services-section__description"><?= $content_section_1['description']; ?></p>
+      </div>
       <section class="services-section__services">
         <?php
         $services = $content_section_1['services'];
