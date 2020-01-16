@@ -3,13 +3,14 @@ import LazyLoad from './LazyLoad';
 import MenuScroll from './MenuScroll';
 import smoothscroll from 'smoothscroll-polyfill';
 import CustomizeMenu from './CustomizeMenu';
+import HomeScroll from './HomeScroll';
 
 class Core {
   constructor() {
     this.config = {
       formSelector: '.contact-form__inner',
       lazyLoadSelector: '[data-background], [data-src]',
-      menuSelector: '.home .main-header__navigation-item > a',
+      menuSelector: '.main-header__navigation-item:not(.main-header__navigation-item--contact) > a',
       navSelector: '.main-header__navigation',
     }
 
@@ -22,6 +23,7 @@ class Core {
     new LazyLoad(lazyLoadSelector);
     new MenuScroll(menuSelector);
     new CustomizeMenu(navSelector);
+    // new HomeScroll();
 
     smoothscroll.polyfill();
   }

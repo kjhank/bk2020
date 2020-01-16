@@ -39,9 +39,9 @@ $arrow = get_field('icon-arrow', 'option');
     </section>
   </section>
   <section class="landing__section services-section">
-    <div class="container services-section__container">
+    <div class="container services-section__container" id="specialization">
       <div class="services-section__wrapper">
-        <h3 class="services-section__brow brow" id="specialization"><?= $content_section_1['brow']; ?></h3>
+        <h3 class="services-section__brow brow"><?= $content_section_1['brow']; ?></h3>
         <h2 class="services-section__heading"><?= $content_section_1['heading']; ?></h2>
         <div class="line line--highlight services-section__line"></div>
         <p class="services-section__description"><?= $content_section_1['description']; ?></p>
