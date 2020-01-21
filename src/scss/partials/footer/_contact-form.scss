@@ -81,4 +81,13 @@
       }
     }
   }
+
+  @include rwd(xxs) {
+    &__submit {
+      width: 100%;
+      padding: 25px;
+
+      @include flex(row, center, center);
+    }
+  }
 }

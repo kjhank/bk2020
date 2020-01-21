@@ -162,4 +162,14 @@
       }
     }
   }
+
+  @include rwd(xxs) {
+    &__container {
+      @include flex(column, center, center);
+    }
+
+    &__services {
+      margin: 50px 0;
+    }
+  }
 }

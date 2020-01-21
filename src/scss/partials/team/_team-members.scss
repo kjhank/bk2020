@@ -172,4 +172,26 @@
       }
     }
   }
+
+  @include rwd(xxs) {
+    &__heading {
+      text-align: center;
+    }
+
+    &__group {
+      &-wrapper {
+        @include flex(row, space-between, flex-start, wrap);
+      }
+    }
+
+    &__member {
+      width: 160px;
+      height: 160px;
+      margin: 0;
+
+      &:nth-child(n+3) {
+        margin-top: 50px;
+      }
+    }
+  }
 }

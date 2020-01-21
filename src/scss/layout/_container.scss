@@ -13,4 +13,9 @@
     max-width: 1000px;
     padding: 0 50px;
   }
+
+  @include rwd(xxs) {
+    max-width: 600px;
+    padding: 0 15px;
+  }
 }

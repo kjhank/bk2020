@@ -66,4 +66,22 @@
       width: 100%;
     }
   }
+
+  @include rwd(xxs) {
+    &__container {
+      @include flex(column, space-between, flex-start, wrap);
+    }
+
+    &__button {
+      align-self: flex-end;
+    }
+
+    &__heading {
+      font-size: 48px;
+    }
+
+    &__paragraph {
+      width: 80%;
+    }
+  }
 }

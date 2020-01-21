@@ -64,8 +64,12 @@
   @content;
 }
 
-@mixin gradient($orientation, $start-color, $end-color) {
-  background-color: mix($start-color, $end-color);
+@mixin gradient($orientation, $start-color, $end-color, $mix: true) {
+  @if $mix == 'true' {
+    background-color: mix($start-color, $end-color);
+  } @else {
+    background-color: transparent;
+  }
 
   @if $orientation == 'vertical' {
     background-image: linear-gradient(to bottom, $start-color, $end-color);

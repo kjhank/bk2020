@@ -23,7 +23,14 @@
     padding: 0 210px;
     text-align: center;
   }
-  
-  &__members {
+
+  @include rwd(xxs) {
+    &__heading {
+      text-align: center;
+    }
+
+    &__description {
+      padding: 0;
+    }
   }
 }

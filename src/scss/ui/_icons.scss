@@ -9,4 +9,11 @@
       height: 13px;
     }
   }
+
+  &--circles {
+    width: 50px;
+    height: 50px;
+    color: inherit;
+    stroke: currentColor;
+  }
 }

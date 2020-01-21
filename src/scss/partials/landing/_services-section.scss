@@ -188,4 +188,15 @@
     }
   }
 
+  @include rwd(xxs) {
+    padding: 0;
+    
+    &__container {
+      @include flex(column, center, center);
+    }
+
+    &__wrapper {
+      margin-top: 0;
+    }
+  }
 }
