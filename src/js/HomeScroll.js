@@ -32,8 +32,7 @@ export default class HomeScroll {
   getScrollPosition(target) {
     const { offset } = this.config;
     const targetPosition = target.offsetTop;
-    const distanceFromParent = target.getBoundingClientRect().top - target.parentNode.parentNode.getBoundingClientRect().top;
-    const scrollPosition = targetPosition - offset - distanceFromParent;
+    const scrollPosition = targetPosition - offset;
 
     return scrollPosition;
   }

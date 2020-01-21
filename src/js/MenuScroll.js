@@ -40,9 +40,6 @@ export default class MenuScroll {
   getScrollPosition(target) {
     let { offset } = this.config;
     const targetPosition = target.offsetTop;
-    const distanceFromParent = target.getBoundingClientRect().top - target.parentNode.parentNode.getBoundingClientRect().top;
-    const difference = targetPosition - distanceFromParent;
-    offset = distanceFromParent === targetPosition ? offset : offset + difference;
     const scrollPosition = targetPosition - offset;
 
     return scrollPosition;
