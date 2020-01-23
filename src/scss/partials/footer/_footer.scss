@@ -67,7 +67,6 @@
   }
 
   &__contact {
-    // width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,6 +119,10 @@
 
   & .main-logo {
     width: 350px;
+  }
+
+  & div.wpcf7-mail-sent-ok {
+    display: none;
   }
 
   @include rwd(m) {
@@ -181,6 +184,23 @@
     }
   }
 
+  @include rwd(xs) {
+    &__contact {
+      &-item {
+        padding: 0 10px;
+      }
+    }
+
+    & .main-logo {
+      width: 40%;
+    }
+
+    &__info {
+      height: 100px;
+      margin: 0 0 -50px;
+    }
+  }
+
   @include rwd(xxs) {
     &__container {
       @include flex(column, center, center);
@@ -190,26 +210,56 @@
       width: 100%;
     }
 
+    & .main-logo {
+      width: 80%;
+    }
+
     &__contact {
-      @include flex(row, space-between, center, wrap);
+      width: 80%;
+
+      @include flex(column, space-between, center, nowrap);
 
       &-form {
         width: 100%;
+        margin: 32px 0;
       }
 
       &-item {
-        width: 50%;
-        padding: 0 10px;
+        position: relative;
+        width: 100%;
+        padding: 10px;
 
-        &:last-of-type {
-          width: 100%;
+        @include flex(row, space-between, center);
+
+        & + & {
           border: none;
+          
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            width: 50%;
+            height: 1px;
+            transform: translateX(-50%);
+            background-color: $color-gray-c7;
+          }
         }
+      }
+
+      &-heading,
+      &-content {
+        flex: 1 1 50%;
+      }
+
+      &-heading {
+        font-size: 12px;
       }
     }
 
     &__info {
       height: auto;
+      margin: 0 0 -32px;
 
       @include flex(column, center, center);
     }

@@ -98,13 +98,28 @@
   }
 
   @include rwd(s) {
+    background-position: top -60px center;
+
     &__wrapper {
       width: 45;
       margin: 0;
     }
 
     &__link {
-      margin: 20px 0 40px;
+      margin: 30px 0 50px;
+
+      &--bright {
+        color: #fff;
+      }
+    }
+  }
+
+  @include rwd(xs) {
+    background-size: calc(100% + 150px);
+    background-position: top -60px left -150px;
+
+    &__wrapper {
+      width: 55%;
     }
   }
 }
