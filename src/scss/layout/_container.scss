@@ -1,8 +1,8 @@
 .container {
   width: 100%;
   max-width: $container-width;
-  padding: 0 $container-padding;
   margin: auto;
+  padding: 0 $container-padding;
 
   @include rwd(m) {
     max-width: 1200px;

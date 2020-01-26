@@ -1,25 +1,19 @@
 @import './helpers/mixins';
 @import './helpers/reset';
 @import './helpers/vars';
-
 @import './generic/fonts';
 @import './generic/typography';
 @import './generic/animations';
 @import './ui/_buttons';
 @import './ui/icons';
-
 @import './layout/container';
 @import './layout/content';
-
 @import './partials/line';
 @import './partials/brow';
 @import './partials/header';
-
+@import './partials/cookie-banner';
 @import './pages/landing';
 @import './pages/team';
 @import './pages/team-member';
 @import './pages/specializations';
-
 @import './partials/footer/footer';
-
-#wpadminbar {display: none}

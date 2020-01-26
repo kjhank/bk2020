@@ -27,18 +27,17 @@
   }
 
   &__grid {
-    padding: 50px 0 123px;
     width: 100%;
+    padding: 50px 0 123px;
 
     @include flex(row, space-between, flex-start, wrap);
   }
 
   &__single {
     position: relative;
+    z-index: 1;
     height: 111px;
-    z-index: 1;
     background-color: #fff;
-    z-index: 1;
     transition: color $tr;
 
     &::after {
@@ -48,10 +47,30 @@
       right: 0;
       bottom: 0;
       left: 0;
+      z-index: 2;
       opacity: 0;
       background-image: radial-gradient(circle at top right, #b26493, $color-highlight);
       transition: opacity $tr;
-      z-index: 2;
+    }
+
+    &-link {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+
+      @include flex(row, flex-start, center);
+
+      & .icon {
+        &--arrow {
+          position: absolute;
+          top: 50%;
+          right: 16px;
+          transition: fill $tr;
+          transform: translateY(-50%);
+          fill: $color-highlight;
+        }
+      }
     }
 
     &:hover {
@@ -70,33 +89,13 @@
 
     @include shadow(10px, 20px, lighten($color-shadow, 50%));
 
-    &-link {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      z-index: 3;
-
-      @include flex(row, flex-start, center);
-
-      & .icon {
-        &--arrow {
-          position: absolute;
-          top: 50%;
-          right: 16px;
-          transform: translateY(-50%);
-          fill: $color-highlight;
-          transition: fill $tr;
-        }
-      }
-    }
-
     &-name {
+      position: absolute;
       width: 100%;
+      padding: 0 42px;
       font-size: 28px;
       font-family: $font-family-serif;
       line-height: 1;
-      position: absolute;
-      padding: 0 42px;
     }
 
     &--business {
@@ -127,7 +126,7 @@
 
     &__line {
       width: 81px;
-      margin: 15px 0 20px
+      margin: 15px 0 20px;
     }
 
     &__description {
@@ -153,8 +152,8 @@
       height: 100px;
 
       &-name {
-        font-size: $font-size-mid;
         padding: 25px 35px 25px 25px;
+        font-size: $font-size-mid;
       }
     }
   }

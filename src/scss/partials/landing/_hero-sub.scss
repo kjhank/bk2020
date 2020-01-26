@@ -1,5 +1,6 @@
 .hero-sub {
   $this: &!default;
+
   margin: 240px 0 0;
   background-image: radial-gradient(rgba($color-gradient-start, 0.6), rgba($color-gradient-end, 0.6));
 
@@ -23,15 +24,16 @@
     position: relative;
     margin: 0 0 -163px;
     padding: 163px 0 0;
+
     @include flex(row, space-between, flex-start);
   }
 
   &__single-service {
     width: percentage(1/3);
     height: 326px;
+    padding: 30px 30px 30px 65px;
     background-color: #fff;
     color: $color-light;
-    padding: 30px 30px 30px 65px;
 
     &:last-child {
       border-left: 1px solid $color-services-border;
@@ -67,8 +69,8 @@
     }
 
     &--highlight {
-      color: #fff;
       background-image: radial-gradient(circle at top right, #b26493, $color-highlight);
+      color: #fff;
 
       .hero-sub__single-service-line {
         background-color: #fff;
@@ -147,18 +149,19 @@
     }
 
     &__services {
-      @include flex(column, stretch, stretch);
+      flex: 1;
       margin: -50px 0;
       padding: 0;
-      flex: 1;
+
+      @include flex(column, stretch, stretch);
     }
 
     &__single-service {
       width: 100%;
 
       &:last-child {
-        border-left: none;
         border-top: 1px solid $color-services-border;
+        border-left: none;
       }
     }
   }

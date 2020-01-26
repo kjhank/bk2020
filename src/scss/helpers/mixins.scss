@@ -1,23 +1,24 @@
 @mixin shadow($offset-x, $offset-y, $color) {
-  box-shadow: #{$offset-x / 3} #{$offset-y / 3} #{$offset-y / 3} rgba($color, 0.2),
-              #{$offset-x * 2/3} #{$offset-y * 2/3} #{$offset-y * 2/3} rgba($color, 0.2),
-              #{$offset-x * 4/3} #{$offset-y * 4/3} #{$offset-y * 4/3} rgba($color, 0.2),
-              #{$offset-x * 8/3} #{$offset-y * 8/3} #{$offset-y * 8/3} rgba($color, 0.2),
-              #{$offset-x * 16/3} #{$offset-y * 16/3} #{$offset-y * 16/3} rgba($color, 0.2)
+  box-shadow:
+    #{$offset-x / 3} #{$offset-y / 3} #{$offset-y / 3} rgba($color, 0.2),
+    #{$offset-x * 2/3} #{$offset-y * 2/3} #{$offset-y * 2/3} rgba($color, 0.2),
+    #{$offset-x * 4/3} #{$offset-y * 4/3} #{$offset-y * 4/3} rgba($color, 0.2),
+    #{$offset-x * 8/3} #{$offset-y * 8/3} #{$offset-y * 8/3} rgba($color, 0.2),
+    #{$offset-x * 16/3} #{$offset-y * 16/3} #{$offset-y * 16/3} rgba($color, 0.2);
 }
 
 @mixin rwd($query, $mobileFirst: false) {
- $queries: (
-   'xxs'    : (max-width: 600px),
-   'xs'     : (max-width: 900px),
-   's'      : (max-width: 1200px),
-   'm'      : (max-width: 1400px),
-   'l'      : (max-width: 1600px),
-   'xl'     : (max-width: 1800px),
-   'ultra'  : (max-width: 2500px),
-   'touch'  : (pointer: coarse),
-   'mouse'  : (pointer: fine)
- );
+  $queries: (
+    'xxs'    : (max-width: 600px),
+    'xs'     : (max-width: 900px),
+    's'      : (max-width: 1200px),
+    'm'      : (max-width: 1400px),
+    'l'      : (max-width: 1600px),
+    'xl'     : (max-width: 1800px),
+    'ultra'  : (max-width: 2500px),
+    'touch'  : (pointer: coarse),
+    'mouse'  : (pointer: fine)
+  );
 
   $queries-mf: (
     'xxs'     : (min-width: 601px),
@@ -33,7 +34,6 @@
 
   @if ($mobileFirst != false) {
     @if map-has-key($queries-mf, $query) {
-
       @media #{inspect(map-get($queries-mf, $query))} {
         @content;
       }
@@ -44,7 +44,6 @@
     }
   } @else {
     @if map-has-key($queries, $query) {
-
       @media #{inspect(map-get($queries, $query))} {
         @content;
       }
