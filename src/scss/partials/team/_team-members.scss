@@ -1,17 +1,17 @@
 .team-members {
-  $this: & !default;
+  $this: &!default;
 
+  margin: 0 0 114px;
+  background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
-  margin: 0 0 114px;
 
   &__group {
     &-name {
+      margin: 0 0 12px;
+      color: $color-mid;
       font-size: 34px;
       font-family: $font-family-serif;
-      color: $color-mid;
-      margin: 0 0 12px;
     }
 
     &-wrapper {
@@ -19,8 +19,8 @@
         display: inline-flex;
       }
 
-      padding: 30px 0 0;
       border-top: 2px solid $color-highlight;
+      padding: 30px 0 0;
     }
 
     & + & {
@@ -29,11 +29,11 @@
   }
 
   &__member {
+    z-index: 1;
     width: 383px;
     height: 383px;
     margin-left: 40.5px;
     background-size: cover;
-    z-index: 1;
     transition: transform $tr, box-shadow $tr;
 
     @include flex(row, center, flex-end);
@@ -49,44 +49,44 @@
 
     &-link {
       position: relative;
+      z-index: 3;
       display: block;
       width: 100%;
       height: 100%;
-      z-index: 3;
 
       @include flex(column, center, center);
     }
 
     &-data {
       position: relative;
+      z-index: 1;
       width: 323px;
       height: 92px;
       margin: 0 0 -40px;
-      background-color: #fff;
       border-bottom: 2px solid $color-highlight;
+      background-color: #fff;
       transition: box-shadow $tr, border-color $tr;
-      z-index: 1;
 
       @include shadow(5px, 15px, lighten($color-shadow, 50%));
 
       &::after {
-        position: absolute;
         content: '';
+        position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
+        z-index: 2;
+        opacity: 0;
         width: 100%;
         height: calc(100% + 2px);
         background-image: radial-gradient(circle at top right, #b26493, $color-highlight);
-        opacity: 0;
-        z-index: 2;
         transition: opacity $tr;
       }
 
       &:hover {
-        color: #fff;
         border-color: transparent;
+        color: #fff;
 
         &::after {
           opacity: 1;
@@ -99,25 +99,25 @@
     }
 
     &-name {
-      font-family: $font-family-serif;
       font-size: 28px;
+      font-family: $font-family-serif;
       transition: color $tr;
     }
 
     &-position {
-      font-size: $font-size-s;
       color: $color-lighter;
+      font-size: $font-size-s;
       transition: color $tr;
     }
   }
-  
+
   @include rwd(m) {
     margin: 0 0 76px;
 
     &__group {
       &-name {
-        font-size: 23px;
         margin: 0 0 8px;
+        font-size: 23px;
       }
 
       &-wrapper {
@@ -192,6 +192,13 @@
       &:nth-child(n+3) {
         margin-top: 50px;
       }
+    }
+  }
+
+  @include rwd(360px) {
+    &__member {
+      width: 140px;
+      height: 140px;
     }
   }
 }
