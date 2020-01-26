@@ -35,7 +35,7 @@ $cookies      = get_field('cookies', 'option');
     </footer>
   </div>
   <section class="main-footer__map-wrapper">
-    <iframe title="google maps" class="main-footer__map" data-src="<?= $map['url']; ?>" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    <iframe title="google maps" class="main-footer__map" src="<?= $map['url']; ?>" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
   </section>
   <div class="main-footer__copyright"><?= $copyright['content']; ?></div>
 </footer>
