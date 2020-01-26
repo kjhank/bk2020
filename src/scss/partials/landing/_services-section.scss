@@ -1,8 +1,9 @@
 .services-section {
   $this: &!default;
+
   padding: 163px 0 0;
   text-align: center;
-  
+
   @include gradient(vertical, #e1e1e1, #fff);
 
   &__wrapper {
@@ -30,27 +31,28 @@
   &__services {
     width: 100%;
     margin: 55px 0 196px;
+
     @include flex(row, space-between, flex-start);
   }
 
   &__single-service {
+    z-index: 1;
     width: 590px;
     height: 315px;
     background-size: cover;
-    z-index: 1;
 
     @include flex(row, center, flex-end);
     @include shadow(10px, 20px, lighten($color-shadow, 50%));
 
     &-name {
       position: relative;
+      z-index: 1;
       width: 527px;
       height: 111px;
-      background-color: #fff;
-      font-family: $font-family-serif;
-      font-size: 28px;
       margin: 0 0 -56px;
-      z-index: 1;
+      background-color: #fff;
+      font-size: 28px;
+      font-family: $font-family-serif;
       transition: color $tr;
 
       @include shadow(5px, 15px, lighten($color-shadow, 50%));
@@ -62,23 +64,23 @@
         right: 0;
         bottom: 0;
         left: 0;
+        z-index: 1;
+        opacity: 0;
         width: 100%;
         height: 100%;
         background-image: radial-gradient(circle at top right, #b26493, $color-highlight);
-        opacity: 0;
         transition: opacity $tr;
-        z-index: 1;
       }
 
-      & .icon{
+      & .icon {
         &--arrow {
           position: absolute;
           top: 50%;
           right: 56px;
+          z-index: 2;
+          transition: fill $tr;
           transform: translateY(-50%);
           fill: $color-highlight;
-          transition: fill $tr;
-          z-index: 2;
         }
       }
 
@@ -99,12 +101,12 @@
 
     &-url {
       position: relative;
+      z-index: 2;
       display: block;
       width: 100%;
       height: 100%;
       padding: 0 56px;
       line-height: 111px;
-      z-index: 2;
       text-align: left;
     }
   }
@@ -126,8 +128,8 @@
     }
 
     &__services {
-      margin: 37px 0 130px;
       justify-content: space-around;
+      margin: 37px 0 130px;
     }
 
     &__single-service {
@@ -137,8 +139,8 @@
       &-name {
         width: 85%;
         height: 74px;
-        font-size: 28px * 2/3;
         margin: 0 0 -37px;
+        font-size: 28px * 2/3;
       }
 
       &-url {
@@ -151,7 +153,7 @@
     padding: 50px 0;
 
     &__container {
-      @include flex(row-reverse, space-around, center)
+      @include flex(row-reverse, space-around, center);
     }
 
     &__wrapper {
@@ -190,13 +192,27 @@
 
   @include rwd(xxs) {
     padding: 0;
-    
+
     &__container {
       @include flex(column, center, center);
     }
 
     &__wrapper {
       margin-top: 0;
+    }
+
+    &__single-service {
+      &-url {
+        padding: 0 20px;
+      }
+
+      &-name {
+        & .icon {
+          &--arrow {
+            right: 20px;
+          }
+        }
+      }
     }
   }
 }
