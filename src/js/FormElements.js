@@ -1,7 +1,7 @@
 export default class Form {
   constructor(selector) {
     if (!this.checkVars(selector)) return;
-    
+
     this.config = {
       formElem: document.querySelector(selector),
       inputSelector: '.contact-form__input',
@@ -10,6 +10,8 @@ export default class Form {
       loaderSelector: '.ajax-loader',
       submittedClass: 'contact-form__submit--submitted',
       failedClass: 'contact-form__submit--failed',
+      invalidClass: 'contact-form__submit--invalid',
+      sentClass: 'contact-form__submit--sent',
       loaderContent: `<?xml version="1.0" ?>
       <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->
       <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#fff" class="contact-form__loader">
@@ -44,7 +46,10 @@ export default class Form {
     const { formElem, inputSelector } = this.config;
 
     if (!formElem) return;
-    
+
+    this.submitBtn = formElem.querySelector('.contact-form__submit');
+
+
     this.inputs = formElem.querySelectorAll(inputSelector);
     this.initEvents();
   }
@@ -60,36 +65,38 @@ export default class Form {
     formElem.parentNode.addEventListener('wpcf7invalid', e => this.handleInvalid(e));
   }
 
-  handleInvalid(e) {
-    console.log(e);
-    // TODO: finish invalid form handling
+  handleInvalid() {
+    const { submittedClass, invalidClass } = this.config;
+    this.submitBtn.classList.remove(submittedClass);
+    this.submitBtn.classList.add(invalidClass);
+    this.submitBtn.removeAttribute('disabled');
+    this.submitBtn.innerHTML = 'Uzupełnij wymagane pola'
   }
 
   handleSubmit() {
-    const { loaderContent, formElem, submittedClass } = this.config;
-    const submitBtn = formElem.querySelector('.contact-form__submit');
-    submitBtn.classList.add(submittedClass);
-    submitBtn.setAttribute('disabled', '');
+    const { loaderContent, submittedClass } = this.config;
+    this.submitBtn.classList.add(submittedClass);
+    this.submitBtn.setAttribute('disabled', '');
 
-    submitBtn.innerHTML += loaderContent;
+    this.submitBtn.innerHTML += loaderContent;
   }
 
   handleSent() {
-    const { formElem, submittedClass, activeClass } = this.config;
-    const submitBtn = formElem.querySelector('.contact-form__submit');
-    submitBtn.classList.remove(submittedClass);
+    const { submittedClass, activeClass, invalidClass, sentClass } = this.config;
+    this.submitBtn.classList.remove(submittedClass);
+    this.submitBtn.classList.remove(invalidClass);
     this.inputs.forEach(elem => elem.parentNode.previousElementSibling.classList.remove(activeClass));
-
-    submitBtn.innerHTML = 'Wysłano';
+    this.submitBtn.innerHTML = 'Wysłano';
+    this.submitBtn.classList.add(sentClass)
+    this.submitBtn.setAttribute('disabled', '');
   }
 
   handleFailed() {
-    const { formElem, submittedClass, failedClass } = this.config;
-    const submitBtn = formElem.querySelector('.contact-form__submit');
-    submitBtn.classList.remove(submittedClass);
-    submitBtn.classList.add(failedClass);
+    const { submittedClass, failedClass } = this.config;
+    this.submitBtn.classList.remove(submittedClass);
+    this.submitBtn.classList.add(failedClass);
 
-    submitBtn.innerHTML = 'Wystąpił błąd';
+    this.submitBtn.innerHTML = 'Wystąpił błąd';
   }
 
   handleFocus(e) {
@@ -106,14 +113,5 @@ export default class Form {
     if (!value) {
       trigger.parentNode.previousElementSibling.classList.remove(activeClass);
     }
-  }
-
-  replaceLoader() {
-    const { formElem, loaderSelector, loaderContent } = this.config;
-    const loader = document.querySelector('.ajax-loader');
-
-    console.log(loader, formElem, loaderSelector)
-
-    // loader.innerHTML = loaderContent;
   }
 }
