@@ -6,6 +6,7 @@ import CustomizeMenu from './CustomizeMenu';
 import HomeScroll from './HomeScroll';
 import MenuToggle from './MenuToggle';
 import ContactScroll from './ContactScroll';
+import CookieBanner from './CookieBanner';
 
 class Core {
   constructor() {
@@ -16,13 +17,23 @@ class Core {
       navSelector: '.main-header__navigation',
       toggleSelector: '.main-header__navigation',
       contactSelector: '.main-header__navigation-item--contact',
+      cookieBannerSelector: '.cookie-banner',
     }
 
     this.init();
   }
-  
+
   init() {
-    const { formSelector, lazyLoadSelector, menuSelector, navSelector, toggleSelector, contactSelector } = this.config;
+    const {
+      formSelector,
+      lazyLoadSelector,
+      menuSelector,
+      navSelector,
+      toggleSelector,
+      contactSelector,
+      cookieBannerSelector,
+    } = this.config;
+
     new Form(formSelector);
     new LazyLoad(lazyLoadSelector);
     new MenuScroll(menuSelector);
@@ -30,6 +41,7 @@ class Core {
     new HomeScroll();
     new MenuToggle(toggleSelector);
     new ContactScroll(contactSelector);
+    new CookieBanner(cookieBannerSelector);
 
     smoothscroll.polyfill();
   }
