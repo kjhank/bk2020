@@ -95,10 +95,16 @@ function add_additional_class_on_li($classes, $item, $args)
   return $classes;
 }
 
+function hide_menu_items() {
+  remove_menu_page('edit-comments.php');
+  remove_menu_page('edit.php');
+}
+
 add_action('init', 'optimize_loading');
 add_action('init', 'create_members');
 add_action('init', 'register_menus');
 add_action('wp_enqueue_scripts', 'unload_block_library');
+add_action('admin_init', 'hide_menu_items');
 
 add_filter('wp_enqueue_scripts', 'optimize_loading', PHP_INT_MAX);
 add_filter('upload_mimes', 'allow_svg_upload');
@@ -112,6 +118,8 @@ if (function_exists('acf_add_options_page')) {
     'menu_title'  => 'Ustawienia strony',
     'menu_slug'   => 'general-page-settings',
     'capability'  => 'edit_posts',
+    'icon_url'    => 'dashicons-text',
+    'position'    => 28,
     'redirect'    => false,
   ));
 
@@ -128,8 +136,8 @@ if (function_exists('acf_add_options_page')) {
   ));
 
   acf_add_options_sub_page(array(
-    'page_title'  => 'Ustawienia SEO',
-    'menu_title'  => 'SEO',
+    'page_title'  => 'Ustawienia analytics i SEO',
+    'menu_title'  => 'Analytics/SEO',
     'parent_slug' => 'general-page-settings',
   ));
 }
