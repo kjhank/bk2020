@@ -5,6 +5,9 @@ $color-light: #555a5c;
 $color-foreground: #303537;
 $color-mid: #42474b;
 $color-highlight: #993671;
+$color-form-invalid: #ffd259;
+$color-form-valid: #b0f566;
+$color-form-error: #b01f1e;
 $color-near-white: #fbfbfb;
 $color-shadow: rgba(#33393b, 0.25);
 $color-gradient-start: $color-foreground;
@@ -29,9 +32,9 @@ $font-family-serif: 'Times', serif;
 
 // transitions
 
-$transition-time: .3s;
-$transition-time-s: .2s;
-$transition-time-m: .5s;
+$transition-time: 0.3s;
+$transition-time-s: 0.2s;
+$transition-time-m: 0.5s;
 $transition-function: ease-in-out;
 
 $tr: $transition-time $transition-function;
