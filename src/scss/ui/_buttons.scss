@@ -1,18 +1,19 @@
 .button {
   position: relative;
-  color: $color-mid;
-  background-color: transparent;
-  padding: 22px 60px;
-  font-size: 14px;
-  font-weight: 700;
   border: 1px solid $color-highlight;
+  padding: 22px 60px;
+  background-color: transparent;
+  color: $color-mid;
+  font-weight: 700;
+  font-size: 14px;
   text-transform: uppercase;
-  display: inline-flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
   backdrop-filter: none;
   transition: color $tr, background-color $tr, border-color $tr, backdrop-filter $tr;
+  cursor: pointer;
+
+  @include flex(row, space-between, center) {
+    display: inline-flex;
+  }
 
   @include rwd(m) {
     padding: 18px 40px;
@@ -20,9 +21,9 @@
   }
 
   &:hover {
-    color: $color-highlight;
-    background-color: #fff;
     border-color: $color-highlight;
+    background-color: #fff;
+    color: $color-highlight;
   }
 
   &--front {
