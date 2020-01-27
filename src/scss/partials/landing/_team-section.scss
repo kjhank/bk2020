@@ -58,7 +58,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: opacity $tr-m, transform $tr;
+    transition: opacity $tr-m, transform $tr-m;
     transform: translate3d(0, 100%, 0);
 
     @include flex(row, center, flex-end);

@@ -35,7 +35,7 @@
     height: 383px;
     margin-left: 40.5px;
     background-size: cover;
-    transition: opacity $tr-m, transform $tr, box-shadow $tr;
+    transition: opacity $tr-m, transform $tr-m, box-shadow $tr;
     transform: translate3d(0, 100%, 0);
 
     @include flex(row, center, flex-end);

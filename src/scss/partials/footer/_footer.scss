@@ -59,7 +59,7 @@
     border-bottom: 2px solid $color-highlight;
     padding: 0 85px 0 52px;
     background-color: #fff;
-    transition: opacity $tr-m, transform $tr;
+    transition: opacity $tr-m, transform $tr-m;
     transform: translate3d(0, 100%, 0);
 
     @include flex(row, space-between, center);

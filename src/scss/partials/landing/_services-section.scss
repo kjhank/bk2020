@@ -42,7 +42,7 @@
     width: 590px;
     height: 315px;
     background-size: cover;
-    transition: opacity $tr-m, transform $tr;
+    transition: opacity $tr-m, transform $tr-m;
     transform: translate3d(0, 100%, 0);
 
     @include flex(row, center, flex-end);
