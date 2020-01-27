@@ -30,7 +30,7 @@ export default class Form {
               </g>
           </g>
       </svg>
-      `
+      `,
     };
 
     this.init();
@@ -56,13 +56,13 @@ export default class Form {
 
   initEvents() {
     const { formElem } = this.config;
-    this.inputs.forEach(elem => elem.addEventListener('focus', e => this.handleFocus(e)));
-    this.inputs.forEach(elem => elem.addEventListener('blur', e => this.handleBlur(e)));
+    this.inputs.forEach(elem => elem.addEventListener('focus', event => this.handleFocus(event)));
+    this.inputs.forEach(elem => elem.addEventListener('blur', event => this.handleBlur(event)));
 
-    formElem.addEventListener('submit', e => this.handleSubmit());
+    formElem.addEventListener('submit', () => this.handleSubmit());
     formElem.parentNode.addEventListener('wpcf7mailsent', () => this.handleSent());
     formElem.parentNode.addEventListener('wpcf7mailfailed', () => this.handleFailed());
-    formElem.parentNode.addEventListener('wpcf7invalid', e => this.handleInvalid(e));
+    formElem.parentNode.addEventListener('wpcf7invalid', event => this.handleInvalid(event));
   }
 
   handleInvalid() {
@@ -70,7 +70,7 @@ export default class Form {
     this.submitBtn.classList.remove(submittedClass);
     this.submitBtn.classList.add(invalidClass);
     this.submitBtn.removeAttribute('disabled');
-    this.submitBtn.innerHTML = 'Uzupełnij wymagane pola'
+    this.submitBtn.innerHTML = 'Uzupełnij wymagane pola';
   }
 
   handleSubmit() {
@@ -82,12 +82,17 @@ export default class Form {
   }
 
   handleSent() {
-    const { submittedClass, activeClass, invalidClass, sentClass } = this.config;
+    const {
+      submittedClass,
+      activeClass,
+      invalidClass,
+      sentClass,
+    } = this.config;
     this.submitBtn.classList.remove(submittedClass);
     this.submitBtn.classList.remove(invalidClass);
     this.inputs.forEach(elem => elem.parentNode.previousElementSibling.classList.remove(activeClass));
     this.submitBtn.innerHTML = 'Wysłano';
-    this.submitBtn.classList.add(sentClass)
+    this.submitBtn.classList.add(sentClass);
     this.submitBtn.setAttribute('disabled', '');
   }
 
@@ -99,16 +104,16 @@ export default class Form {
     this.submitBtn.innerHTML = 'Wystąpił błąd';
   }
 
-  handleFocus(e) {
+  handleFocus(event) {
     const { activeClass } = this.config;
-    const { target: trigger } = e;
+    const { target: trigger } = event;
     trigger.parentNode.previousElementSibling.classList.add(activeClass);
   }
 
-  handleBlur(e) {
-    const { target: trigger } = e;
+  handleBlur(event) {
+    const { target: trigger } = event;
     const { activeClass } = this.config;
-    const value = trigger.value;
+    const { value } = trigger;
 
     if (!value) {
       trigger.parentNode.previousElementSibling.classList.remove(activeClass);

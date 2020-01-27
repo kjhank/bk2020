@@ -7,10 +7,10 @@ export default class MenuToggle {
       target: document.querySelector('.main-header__navigation-inner'),
       classes: {
         navVisible: 'main-header__navigation-inner--visible',
-        buttonActive: 'main-header__navigation-toggle--active'
+        buttonActive: 'main-header__navigation-toggle--active',
       },
       navElems: document.querySelectorAll('.main-header__navigation-item a'),
-    }
+    };
 
     this.init();
   }

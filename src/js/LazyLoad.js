@@ -1,12 +1,12 @@
 export default class LazyLoad {
   constructor(selector) {
     if (!this.checkVars(selector)) return;
-    
+
     this.config = {
       selector,
       observerConfig: {
-        rootMargin: '200px'
-      }
+        rootMargin: '200px',
+      },
     };
 
     this.init();
@@ -21,10 +21,10 @@ export default class LazyLoad {
   init() {
     const { selector, observerConfig } = this.config;
     const elements = document.querySelectorAll(selector);
-    
+
     if (!elements) return;
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const lazyObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const { target } = entry;
@@ -34,7 +34,7 @@ export default class LazyLoad {
       });
     }, observerConfig);
 
-    elements.forEach(element => observer.observe(element));
+    elements.forEach(element => lazyObserver.observe(element));
   }
 
   load(element) {

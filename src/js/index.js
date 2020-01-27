@@ -1,7 +1,7 @@
+import smoothscroll from 'smoothscroll-polyfill';
 import Form from './FormElements';
 import LazyLoad from './LazyLoad';
 import MenuScroll from './MenuScroll';
-import smoothscroll from 'smoothscroll-polyfill';
 import CustomizeMenu from './CustomizeMenu';
 import HomeScroll from './HomeScroll';
 import MenuToggle from './MenuToggle';
@@ -23,9 +23,9 @@ class Core {
         selector: '[data-observable]',
         config: {
           rootMargin: '100px',
-        }
+        },
       },
-    }
+    };
 
     this.init();
   }

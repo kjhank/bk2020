@@ -11,7 +11,7 @@ export default class CookieBanner {
       },
       storageKey: 'accepted-cookies',
       buttonSelector: '[data-accept-cookies]',
-    }
+    };
 
     this.init();
   }

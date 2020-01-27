@@ -6,7 +6,7 @@ export default class HomeScroll {
       targetId: this.getId(),
       scrollConfig: { behavior: 'smooth' },
       offset: this.getOffset(),
-    }
+    };
     this.init();
   }
 
@@ -25,7 +25,7 @@ export default class HomeScroll {
 
   getOffset() {
     const headerOffset = document.querySelector('.main-header').getBoundingClientRect().height;
-    
+
     return headerOffset;
   }
 

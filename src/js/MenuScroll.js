@@ -5,7 +5,7 @@ export default class MenuScroll {
     this.config = {
       elements: document.querySelectorAll(selector),
       scrollConfig: {
-        behavior: 'smooth'
+        behavior: 'smooth',
       },
       offset: this.getOffset(),
       location: this.checkLocation(),
@@ -22,12 +22,12 @@ export default class MenuScroll {
 
   initEvents() {
     const { elements } = this.config;
-    elements.forEach(elem => elem.addEventListener('click', e => this.scroll(e)));
+    elements.forEach(elem => elem.addEventListener('click', event => this.scroll(event)));
   }
 
   getOffset() {
     const headerOffset = document.querySelector('.main-header').getBoundingClientRect().height;
-    
+
     return headerOffset;
   }
 
@@ -38,7 +38,7 @@ export default class MenuScroll {
   }
 
   getScrollPosition(target) {
-    let { offset } = this.config;
+    const { offset } = this.config;
     const targetPosition = target.offsetTop;
     const scrollPosition = targetPosition - offset;
 
@@ -49,13 +49,13 @@ export default class MenuScroll {
     localStorage.setItem('idToScroll', targetId);
   }
 
-  scroll(e) {
-    e.preventDefault();
+  scroll(event) {
+    event.preventDefault();
     const { scrollConfig, location } = this.config;
-    const trigger = e.target;
+    const trigger = event.target;
     const targetId = trigger.href.split('#')[1];
     const target = document.querySelector(`#${targetId}`);
-    const isLanding = location === '/' ? true : false;
+    const isLanding = location === '/';
 
 
     if (isLanding) {
@@ -63,7 +63,7 @@ export default class MenuScroll {
       window.scrollTo(scrollConfig);
     } else {
       this.setScrollId(targetId);
-      window.location.href = '/'; // TODO: change on prod
+      window.location.href = '/';
     }
   }
 }

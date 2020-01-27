@@ -4,7 +4,7 @@ export default class ObserverSwitch {
     this.element = document.querySelector(selector);
     this.config = {
       selector,
-      observerConfig
+      observerConfig,
     };
 
     this.init();
@@ -19,7 +19,7 @@ export default class ObserverSwitch {
   init() {
     const { selector, observerConfig } = this.config;
     const elements = document.querySelectorAll(selector);
-    const observer = new IntersectionObserver((entries, observer) => {
+    const elemObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const { target } = entry;
@@ -31,7 +31,7 @@ export default class ObserverSwitch {
       });
     }, observerConfig);
 
-    elements.forEach(element => observer.observe(element));
+    elements.forEach(element => elemObserver.observe(element));
   }
 
   getClass(element, suffix) {

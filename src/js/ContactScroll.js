@@ -6,7 +6,7 @@ export default class ContactScroll {
         behavior: 'smooth',
       },
       offset: this.getOffset(),
-    }
+    };
 
     this.init();
   }
@@ -29,12 +29,12 @@ export default class ContactScroll {
 
   getOffset() {
     const headerOffset = document.querySelector('.main-header').getBoundingClientRect().height;
-    
+
     return headerOffset;
   }
 
   getScrollPosition(target) {
-    let { offset } = this.config;
+    const { offset } = this.config;
     const targetPosition = target.offsetTop;
     const scrollPosition = targetPosition - offset;
 
@@ -44,7 +44,7 @@ export default class ContactScroll {
   scroll(e) {
     e.preventDefault();
     const { scrollConfig } = this.config;
-    const { target: trigger} = e;
+    const { target: trigger } = e;
     const targetId = trigger.href.split('#')[1];
     const target = document.querySelector(`#${targetId}`);
     scrollConfig.top = this.getScrollPosition(target);
