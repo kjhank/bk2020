@@ -7,6 +7,7 @@ import HomeScroll from './HomeScroll';
 import MenuToggle from './MenuToggle';
 import ContactScroll from './ContactScroll';
 import CookieBanner from './CookieBanner';
+import ObserverSwitch from './ObserverSwitch';
 
 class Core {
   constructor() {
@@ -18,6 +19,12 @@ class Core {
       toggleSelector: '.main-header__navigation',
       contactSelector: '.main-header__navigation-item--contact',
       cookieBannerSelector: '.cookie-banner',
+      observable: {
+        selector: '[data-observable]',
+        config: {
+          rootMargin: '100px',
+        }
+      },
     }
 
     this.init();
@@ -32,6 +39,7 @@ class Core {
       toggleSelector,
       contactSelector,
       cookieBannerSelector,
+      observable: { selector: observableSelector, config: observableConfig },
     } = this.config;
 
     new Form(formSelector);
@@ -42,6 +50,7 @@ class Core {
     new MenuToggle(toggleSelector);
     new ContactScroll(contactSelector);
     new CookieBanner(cookieBannerSelector);
+    new ObserverSwitch(observableSelector, observableConfig);
 
     smoothscroll.polyfill();
   }
