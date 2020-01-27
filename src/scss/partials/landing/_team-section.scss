@@ -52,14 +52,22 @@
   }
 
   &__single-member {
+    opacity: 0;
     width: 383px;
     height: 383px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: opacity $tr-m, transform $tr;
+    transform: translate3d(0, 100%, 0);
 
     @include flex(row, center, flex-end);
     @include shadow(10px, 20px, lighten($color-shadow, 50%));
+
+    &--active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
 
     &-wrapper {
       position: relative;

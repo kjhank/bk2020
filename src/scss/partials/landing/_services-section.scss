@@ -36,13 +36,22 @@
   }
 
   &__single-service {
+    position: relative;
     z-index: 1;
+    opacity: 1;
     width: 590px;
     height: 315px;
     background-size: cover;
+    transition: opacity $tr-m, transform $tr;
+    transform: translate3d(0, 100%, 0);
 
     @include flex(row, center, flex-end);
     @include shadow(10px, 20px, lighten($color-shadow, 50%));
+
+    &--active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
 
     &-name {
       position: relative;

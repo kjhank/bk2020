@@ -30,14 +30,21 @@
 
   &__member {
     z-index: 1;
+    opacity: 0;
     width: 383px;
     height: 383px;
     margin-left: 40.5px;
     background-size: cover;
-    transition: transform $tr, box-shadow $tr;
+    transition: opacity $tr-m, transform $tr, box-shadow $tr;
+    transform: translate3d(0, 100%, 0);
 
     @include flex(row, center, flex-end);
     @include shadow(10px, 20px, lighten($color-shadow, 50%));
+
+    &--active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
 
     &:nth-child(3n + 1) {
       margin-left: unset;

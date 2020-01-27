@@ -22,10 +22,18 @@
 
   &__services {
     position: relative;
+    opacity: 0;
     margin: 0 0 -163px;
     padding: 163px 0 0;
+    transition: opacity $tr-m, transform $tr;
+    transform: translate3d(0, 100%, 0);
 
     @include flex(row, space-between, flex-start);
+
+    &--active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   &__single-service {

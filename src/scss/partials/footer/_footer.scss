@@ -52,15 +52,23 @@
   &__info {
     position: relative;
     z-index: 2;
+    opacity: 0;
     width: 100%;
     height: 216px;
     margin: 0 0 -113px;
     border-bottom: 2px solid $color-highlight;
     padding: 0 85px 0 52px;
     background-color: #fff;
+    transition: opacity $tr-m, transform $tr;
+    transform: translate3d(0, 100%, 0);
 
     @include flex(row, space-between, center);
     @include shadow(0, 40px, lighten($color-shadow, 25%));
+
+    &--active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   &__logo {
