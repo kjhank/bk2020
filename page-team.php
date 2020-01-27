@@ -23,7 +23,7 @@ $team_groups = $team_content['member-groups'];
               $data = get_field('member', $id);
               $url = str_replace('/team-members/', '/', get_permalink($id));
               ?>
-              <article class="team-members__member" data-background="<?= $data['image']['url']; ?>">
+              <article class="team-members__member" data-background="<?= $data['image']['url']; ?>" data-observable>
                 <div class="team-members__member-data">
                   <a href="<?= $url; ?>" class="team-members__member-link">
                     <h3 class="team-members__member-name"><?= $data['name']; ?></h3>

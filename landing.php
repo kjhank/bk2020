@@ -22,7 +22,7 @@ $arrow = get_field('icon-arrow', 'option');
           <p class="hero-sub__paragraph"><?= $content_section_0['sub-paragraph']; ?></p>
           <div class="line line--highlight hero-sub__line"></div>
         </div>
-        <section class="hero-sub__services">
+        <section class="hero-sub__services" data-observable>
           <?php
           $services = $content_section_0['services'];
           foreach ($services as $service) :
@@ -51,7 +51,7 @@ $arrow = get_field('icon-arrow', 'option');
         $services = $content_section_1['services'];
         foreach ($services as $service) :
         ?>
-          <article class="services-section__single-service" data-background="<?= $service['background-image']['url']; ?>">
+          <article class="services-section__single-service" data-background="<?= $service['background-image']['url']; ?>" data-observable>
             <h4 class="services-section__single-service-name"><a class="services-section__single-service-url" href="<?= $service['url']; ?>"><?= $service['name']; ?></a><?= file_get_contents(get_attached_file($arrow)); ?></h4>
           </article>
         <?php endforeach; ?>
@@ -69,7 +69,7 @@ $arrow = get_field('icon-arrow', 'option');
         <?php
         $members = $content_section_2['members'];
         foreach ($members as $member) :; ?>
-          <article class="team-section__single-member" data-background="<?= $member['picture']['url']; ?>">
+          <article class="team-section__single-member" data-background="<?= $member['picture']['url']; ?>" data-observable>
             <a class="team-section__single-member-wrapper" href="<?= get_permalink($member['url']); ?>">
               <h4 class="team-section__single-member-name"><?= $member['name']; ?></h4>
               <h5 class="team-section__single-member-position"><?= $member['position']; ?></h5>

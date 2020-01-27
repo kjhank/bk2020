@@ -20,7 +20,7 @@ $cookies      = get_field('cookies', 'option');
       <div class="main-footer__paragraph"><?= $contact['paragraph']; ?></div>
     </div>
     <section class="main-footer__contact-form contact-form"><?php echo strip_tags(do_shortcode($contact_form), $allowed_tags); ?></section>
-    <footer class="main-footer__info">
+    <footer class="main-footer__info" data-observable>
       <?= file_get_contents(get_attached_file($logo)); ?>
       <section class="main-footer__contact">
         <?php
