@@ -52,7 +52,7 @@ $arrow = get_field('icon-arrow', 'option');
         foreach ($services as $service) :
         ?>
           <article class="services-section__single-service" data-background="<?= $service['background-image']['url']; ?>" data-observable>
-            <h4 class="services-section__single-service-name"><a class="services-section__single-service-url" href="<?= $service['url']; ?>"><?= $service['name']; ?></a><?= file_get_contents(get_attached_file($arrow)); ?></h4>
+            <h4 class="services-section__single-service-name"><a class="services-section__single-service-url" href="<?= $service['url']; ?>"><?= $service['name']; ?><?= file_get_contents(get_attached_file($arrow)); ?></a></h4>
           </article>
         <?php endforeach; ?>
       </section>
