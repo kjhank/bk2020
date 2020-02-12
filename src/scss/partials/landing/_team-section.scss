@@ -132,6 +132,12 @@
     }
   }
 
+  @include rwd(l) {
+    &__brow {
+      margin: 5px 0 23px;
+    }
+  }
+
   @include rwd(m) {
     &__brow {
       margin: 47px 0 18px;

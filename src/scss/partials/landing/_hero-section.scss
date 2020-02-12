@@ -30,6 +30,12 @@
     }
   }
 
+  @include rwd(l) {
+    &__heading {
+      padding: 80px 0 20px;
+    }
+  }
+
   @include rwd(m) {
     &__heading {
       width: 55%;

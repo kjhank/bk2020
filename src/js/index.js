@@ -22,7 +22,7 @@ class Core {
       observable: {
         selector: '[data-observable]',
         config: {
-          rootMargin: '100px',
+          rootMargin: '50%',
         },
       },
     };
