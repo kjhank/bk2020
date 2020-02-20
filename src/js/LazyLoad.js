@@ -5,7 +5,7 @@ export default class LazyLoad {
     this.config = {
       selector,
       observerConfig: {
-        rootMargin: '200px',
+        rootMargin: '500px',
       },
     };
 
