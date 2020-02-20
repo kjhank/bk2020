@@ -24,7 +24,7 @@ export default class ContactScroll {
   initEvents() {
     const { trigger } = this.config;
 
-    trigger.addEventListener('click', e => this.scroll(e));
+    trigger.addEventListener('click', event => this.scroll(event));
   }
 
   getOffset() {
@@ -41,10 +41,10 @@ export default class ContactScroll {
     return scrollPosition;
   }
 
-  scroll(e) {
-    e.preventDefault();
+  scroll(event) {
+    event.preventDefault();
     const { scrollConfig } = this.config;
-    const { target: trigger } = e;
+    const { target: trigger } = event;
     const targetId = trigger.href.split('#')[1];
     const target = document.querySelector(`#${targetId}`);
     scrollConfig.top = this.getScrollPosition(target);
