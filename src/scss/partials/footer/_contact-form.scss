@@ -139,6 +139,12 @@
     display: none!important;
   }
 
+  @include rwd(l) {
+    &__submit {
+      margin: 35px 0 0;
+    }
+  }
+
   @include rwd(xxs) {
     &__submit {
       width: 100%;
