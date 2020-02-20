@@ -8,6 +8,7 @@ import MenuToggle from './MenuToggle';
 import ContactScroll from './ContactScroll';
 import CookieBanner from './CookieBanner';
 import ObserverSwitch from './ObserverSwitch';
+// import FixedHeader from './FixedHeader';
 
 class Core {
   constructor() {
@@ -39,21 +40,24 @@ class Core {
       toggleSelector,
       contactSelector,
       cookieBannerSelector,
-      observable: { selector: observableSelector, config: observableConfig },
+      observable: {
+        selector: observableSelector,
+        config: observableConfig,
+      },
     } = this.config;
 
-    new Form(formSelector);
-    new LazyLoad(lazyLoadSelector);
-    new MenuScroll(menuSelector);
-    new CustomizeMenu(navSelector);
-    new HomeScroll();
-    new MenuToggle(toggleSelector);
-    new ContactScroll(contactSelector);
-    new CookieBanner(cookieBannerSelector);
-    new ObserverSwitch(observableSelector, observableConfig);
+    const form = new Form(formSelector);
+    const lazyload = new LazyLoad(lazyLoadSelector);
+    const menuscroll = new MenuScroll(menuSelector);
+    const customizemenu = new CustomizeMenu(navSelector);
+    const homescroll = new HomeScroll();
+    const menutoggle = new MenuToggle(toggleSelector);
+    const contactscroll = new ContactScroll(contactSelector);
+    const cookiebanner = new CookieBanner(cookieBannerSelector);
+    const observerswitch = new ObserverSwitch(observableSelector, observableConfig);
 
     smoothscroll.polyfill();
   }
 }
 
-new Core();
+const core = new Core();
