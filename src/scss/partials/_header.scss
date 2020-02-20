@@ -7,6 +7,12 @@
   width: 100%;
   height: 132px;
   background-color: #fff;
+  transition: transform $tr;
+  transform: translate3d(0, -132px, 0);
+
+  &--fixed {
+    transform: translate3d(0, 0, 0);
+  }
 
   @include flex(row, center, center);
 
@@ -146,20 +152,23 @@
 
   &__logo {
     width: 390px;
-    height: 100px;
+    height: auto;
   }
 
-  &__url {
-    width: 100%;
-    height: 100%;
-  }
+  // &__url {
+  //   width: 100%;
+  //   height: 100%;
+  // }
 
   & .main-logo {
-    width: 100%;
-    height: 100%;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
   }
 
-  @include rwd(m) {
+  @include rwd(l) {
     height: 88px;
 
     &__navigation {
@@ -197,8 +206,7 @@
     }
 
     &__logo {
-      width: 260px;
-      height: 67px;
+      width: 300px;
     }
   }
 
