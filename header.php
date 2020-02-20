@@ -1,8 +1,10 @@
 <?php
-$home_url = get_home_url();
-$logo = get_field('main-logo', 'option');
-$menu = get_field('icon-menu', 'option');
-$analytics = get_field('analytics', 'option');
+  $home_url = get_home_url();
+  $logo = get_field('main-logo', 'option');
+  $menu = get_field('icon-menu', 'option');
+  $analytics = get_field('analytics', 'option');
+  $content_landing = get_field('landing-sections');
+  $background = $content_landing['section-0']['background-image']['url'];
 ?>
 <!doctype html>
 <html lang="<?= pll_current_language(); ?>">
@@ -27,7 +29,7 @@ $analytics = get_field('analytics', 'option');
 </head>
 
 <body <?php body_class(); ?>>
-  <header class="main-header">
+  <header class="main-header main-header--fixed">
     <div class="container main-header__wrapper">
       <?php if (is_home() || is_front_page()) : ?>
         <h1 class="main-header__logo">
@@ -59,4 +61,6 @@ $analytics = get_field('analytics', 'option');
       </nav>
     </div>
   </header>
-  <main class="main-content">
+  <main class="main-content" <?php if(is_home() || is_front_page()) {
+    echo 'style="background-image: url(' . $background . ');"';
+  };?> >
