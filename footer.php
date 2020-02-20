@@ -2,6 +2,7 @@
 $contact      = get_field('contact', 'option');
 $contact_form = substr($contact['cf7-shortcode'], 0, -1) . ' html_class="contact-form__inner"]';
 $footer       = get_field('main-footer', 'option');
+$info         = get_field('contact-info', 'option');
 $map          = get_field('map', 'option');
 $copyright    = get_field('copyright', 'option');
 $logo         = get_field('main-logo', 'option');
@@ -11,13 +12,23 @@ $cookies      = get_field('cookies', 'option');
 ?>
 </main>
 
-<footer class="main-footer<?= $class; ?>" id="contact">
+<footer class="main-footer<?= $class; ?>">
   <div class="container main-footer__container">
     <div class="main-footer__wrapper">
-      <h3 class="main-footer__brow brow"><?= $contact['brow']; ?></h3>
+      <h3 class="main-footer__brow brow" id="contact"><?= $contact['brow']; ?></h3>
       <h2 class="main-footer__heading"><?= $contact['heading']; ?></h2>
+      <h3 class="main-footer__subheading"><?= $contact['subheading']; ?></h3>
       <div class="line line--highlight main-footer__line"></div>
-      <div class="main-footer__paragraph"><?= $contact['paragraph']; ?></div>
+      <section class="main-footer__contact-info">
+        <?php
+        foreach ($info as $item) :
+        ?>
+          <div class="main-footer__contact-info-item">
+            <h4 class="main-footer__contact-info-heading"><?= $item['heading']; ?></h4>
+            <div class="main-footer__contact-info-content"><?= $item['content']; ?></div>
+          </div>
+        <?php endforeach; ?>
+      </section>
     </div>
     <section class="main-footer__contact-form contact-form"><?php echo strip_tags(do_shortcode($contact_form), $allowed_tags); ?></section>
     <footer class="main-footer__info" data-observable>
