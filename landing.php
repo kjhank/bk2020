@@ -8,7 +8,7 @@ $arrow = get_field('icon-arrow', 'option');
 ?>
 
 <section class="main-content__landing landing" id="home">
-  <section class="landing__section hero-section" style="background-image: url(<?= $content_section_0['background-image']['url'] ?>);">
+  <section class="landing__section hero-section">
     <div class="container hero-section__container">
       <h2 class="hero-section__heading"><?= $content_section_0['heading']; ?></h2>
       <p class="hero-section__paragraph"><?= $content_section_0['paragraph']; ?></p>
@@ -58,13 +58,12 @@ $arrow = get_field('icon-arrow', 'option');
       </section>
     </div>
   </section>
-  <section class="landing__section team-section" data-background="<?= $content_section_2['background-image']['url']; ?>" id="team">
+  <section class="landing__section team-section" data-background="<?= $content_section_2['background-image']['url']; ?>">
     <div class="container team-section__container">
-      <h3 class="team-section__brow brow"><?= $content_section_2['brow']; ?></h3>
+      <h3 class="team-section__brow brow" id="team"><?= $content_section_2['brow']; ?></h3>
       <h2 class="team-section__heading"><?= $content_section_2['heading']; ?></h2>
       <div class="line line--highlight team-section__line"></div>
       <p class="team-section__description"><?= $content_section_2['description']; ?></p>
-      <a href="<?= $content_section_2['button']['url']; ?>" class="team-section__button button button--back-light"><?= $content_section_2['button']['text']; ?><?= file_get_contents(get_attached_file($arrow)); ?></a>
       <section class="team-section__members">
         <?php
         $members = $content_section_2['members'];
@@ -77,6 +76,7 @@ $arrow = get_field('icon-arrow', 'option');
           </article>
         <?php endforeach; ?>
       </section>
+      <a href="<?= $content_section_2['button']['url']; ?>" class="team-section__button button button--back-light"><?= $content_section_2['button']['text']; ?><?= file_get_contents(get_attached_file($arrow)); ?></a>
   </section>
   </div>
 </section>
