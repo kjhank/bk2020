@@ -1,6 +1,7 @@
 .team-section {
   $this: &!default;
 
+  padding: 71px 0 172px;
   background-position: center;
   background-size: cover;
 
@@ -9,7 +10,7 @@
   }
 
   &__brow {
-    margin: 71px 0 27px;
+    margin: 0 0 27px;
   }
 
   &__heading {
@@ -46,7 +47,7 @@
 
   &__members {
     width: 810px;
-    margin: 0 0 172px;
+    // padding:
 
     @include flex(row, space-between, flex-start);
   }
@@ -134,36 +135,53 @@
 
   @include rwd(l) {
     &__brow {
-      margin: 5px 0 23px;
-    }
-  }
-
-  @include rwd(m) {
-    &__brow {
-      margin: 47px 0 18px;
-    }
-
-    &__heading {
-      font-size: $font-size-heading * 2/3;
+      margin: 5px 0 12px;
     }
 
     &__line {
       margin: 12px 0 23px;
     }
 
-    &__description {
-      width: 55%;
+    &__members {
+      justify-content: space-around;
+      padding: 20px 0 50px;
+    }
+
+    &__single-member {
+      width: 300px;
+      height: 300px;
+
+      &-wrapper {
+        width: 260px;
+        height: 72px;
+        margin: 0 0 -45px;
+      }
+
+      &-name {
+        font-size: 24px;
+      }
     }
 
     &__button {
-      width: 215px;
+      width: 235px;
+      margin: 20px 0 25px;
       padding: 12px 25px;
 
       & .icon {
         &--arrow {
-          right: 25px;
+          right: 15px;
         }
       }
+    }
+  }
+
+  @include rwd(m) {
+    &__heading {
+      font-size: $font-size-heading * 2/3;
+    }
+
+    &__description {
+      width: 55%;
     }
 
     &__members {
