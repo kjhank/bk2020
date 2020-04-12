@@ -4,19 +4,22 @@ $content_landing = get_field('landing-sections');
 $content_section_0 = $content_landing['section-0'];
 $content_section_1 = $content_landing['section-1'];
 $content_section_2 = $content_landing['section-2'];
+$popup = get_field('popup');
+$popup_active = $popup['active'];
 $arrow = get_field('icon-arrow', 'option');
+$background = $content_landing['section-0']['background-image']['url'];
 ?>
 
 <section class="main-content__landing landing" id="home">
-  <section class="landing__section hero-section">
+  <section class="landing__section hero-section" style="background-image: url('<?= $background;?>');">
     <div class="container hero-section__container">
       <h2 class="hero-section__heading"><?= $content_section_0['heading']; ?></h2>
       <p class="hero-section__paragraph"><?= $content_section_0['paragraph']; ?></p>
       <a href="<?= $content_section_0['button']['url'] ?>" class="hero-section__button button button--front-white"><?= $content_section_0['button']['text']; ?><?= file_get_contents(get_attached_file($arrow)); ?></a>
     </div>
 
-    <section class="hero-section__sub hero-sub" id="about">
-      <div class="container hero-sub__container">
+    <section class="hero-section__sub hero-sub">
+      <div class="container hero-sub__container" id="about">
         <div class="hero-sub__wrapper">
           <h3 class="hero-sub__brow brow"><?= $content_section_0['sub-heading']; ?></h3>
           <p class="hero-sub__paragraph"><?= $content_section_0['sub-paragraph']; ?></p>
@@ -80,4 +83,12 @@ $arrow = get_field('icon-arrow', 'option');
   </section>
   </div>
 </section>
+
+<?php if ($popup_active): ?>
+  <aside class="landing__popup popup">
+    <button class="popup__close" data-close-popup></button>
+    <?= $popup['content']; ?>
+  </aside>
+<?php endif;?>
+
 <?php get_footer(); ?>

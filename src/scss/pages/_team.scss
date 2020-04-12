@@ -24,6 +24,22 @@
     text-align: center;
   }
 
+  @include rwd(l) {
+    &__heading {
+      padding: 10px 0 0;
+      font-size: $font-size-heading * 2/3;
+    }
+
+    &__line {
+      margin: 15px 0;
+    }
+
+    &__description {
+      margin: 0 0 15px;
+      padding: 0;
+    }
+  }
+
   @include rwd(xxs) {
     &__heading {
       text-align: center;

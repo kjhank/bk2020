@@ -47,7 +47,7 @@
 
   &__members {
     width: 810px;
-    // padding:
+    padding: 60px 0;
 
     @include flex(row, space-between, flex-start);
   }
@@ -134,6 +134,8 @@
   }
 
   @include rwd(l) {
+    padding: 71px 0 0;
+
     &__brow {
       margin: 5px 0 12px;
     }
@@ -186,7 +188,7 @@
 
     &__members {
       width: 55%;
-      margin: 0 0 115px;
+      margin: 0;
     }
 
     &__single-member {
@@ -216,6 +218,7 @@
 
     &__members {
       width: 70%;
+      margin: 0 0 45px;
     }
   }
 

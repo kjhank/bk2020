@@ -61,6 +61,4 @@
       </nav>
     </div>
   </header>
-  <main class="main-content" <?php if(is_home() || is_front_page()) {
-    echo 'style="background-image: url(' . $background . ');"';
-  };?> >
+  <main class="main-content">

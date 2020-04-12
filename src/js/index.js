@@ -8,6 +8,7 @@ import MenuToggle from './MenuToggle';
 import ContactScroll from './ContactScroll';
 import CookieBanner from './CookieBanner';
 import ObserverSwitch from './ObserverSwitch';
+import Popup from './Popup';
 // import FixedHeader from './FixedHeader';
 
 class Core {
@@ -17,6 +18,7 @@ class Core {
       lazyLoadSelector: '[data-background], [data-src]',
       menuSelector: '.main-header__navigation-item:not(.main-header__navigation-item--contact) > a',
       navSelector: '.main-header__navigation',
+      popupSelector: '.popup',
       toggleSelector: '.main-header__navigation',
       contactSelector: '.main-header__navigation-item--contact',
       cookieBannerSelector: '.cookie-banner',
@@ -27,8 +29,6 @@ class Core {
         },
       },
     };
-
-    this.init();
   }
 
   init() {
@@ -40,6 +40,7 @@ class Core {
       toggleSelector,
       contactSelector,
       cookieBannerSelector,
+      popupSelector,
       observable: {
         selector: observableSelector,
         config: observableConfig,
@@ -55,9 +56,12 @@ class Core {
     const contactscroll = new ContactScroll(contactSelector);
     const cookiebanner = new CookieBanner(cookieBannerSelector);
     const observerswitch = new ObserverSwitch(observableSelector, observableConfig);
+    const popup = new Popup(popupSelector);
 
     smoothscroll.polyfill();
   }
 }
 
 const core = new Core();
+
+core.init();

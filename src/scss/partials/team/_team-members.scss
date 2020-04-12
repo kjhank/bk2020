@@ -1,6 +1,7 @@
 .team-members {
   $this: &!default;
 
+  width: 100%;
   margin: 0 0 114px;
   background-position: top center;
   background-size: cover;
@@ -8,7 +9,7 @@
 
   &__group {
     &-name {
-      margin: 0 0 12px;
+      padding: 0 0 24px;
       color: $color-mid;
       font-size: 34px;
       font-family: $font-family-serif;
@@ -16,24 +17,28 @@
 
     &-wrapper {
       @include flex(row, flex-start, flex-start, wrap) {
-        display: inline-flex;
       }
 
-      border-top: 2px solid $color-highlight;
       padding: 30px 0 0;
     }
 
     & + & {
       margin: 165px 0 0;
     }
+
+    &:last-of-type {
+      padding: 0 0 76px;
+    }
   }
 
   &__member {
+    position: relative;
     z-index: 1;
     opacity: 0;
-    width: 383px;
-    height: 383px;
-    margin-left: 40.5px;
+    width: 31%;
+    height: 0;
+    margin-left: 3.5%;
+    padding: 31% 0 0;
     background-size: cover;
     transition: opacity $tr-m, transform $tr-m, box-shadow $tr;
     transform: translate3d(0, 100%, 0);
@@ -41,9 +46,25 @@
     @include flex(row, center, flex-end);
     @include shadow(10px, 20px, lighten($color-shadow, 50%));
 
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: 0;
+      width: 150%;
+      height: 2px;
+      background-color: $color-highlight;
+    }
+
     &--active {
       opacity: 1;
       transform: translate3d(0, 0, 0);
+    }
+
+    &:first-child {
+      &::before {
+        left: 0;
+      }
     }
 
     &:nth-child(3n + 1) {
@@ -52,6 +73,10 @@
 
     &:nth-child(n + 4) {
       margin: 78px 0 0;
+
+      &::before {
+        content: unset;
+      }
     }
 
     &-link {
@@ -67,7 +92,7 @@
     &-data {
       position: relative;
       z-index: 1;
-      width: 323px;
+      width: 85%;
       height: 92px;
       margin: 0 0 -40px;
       border-bottom: 2px solid $color-highlight;
@@ -118,34 +143,43 @@
     }
   }
 
-  @include rwd(m) {
-    margin: 0 0 76px;
+  @include rwd(l) {
+    &__group {
+      &-name {
+        padding: 0 0 4px;
+      }
 
+      &-wrapper {
+        padding: 15px 0 0;
+      }
+    }
+
+    &__member {
+      &::before {
+        top: -15px;
+      }
+    }
+  }
+
+  @include rwd(l) {
+    &__group {
+      & + & {
+        margin: 110px 0 0;
+      }
+    }
+  }
+
+  @include rwd(m) {
     &__group {
       &-name {
         margin: 0 0 8px;
         font-size: 23px;
       }
-
-      &-wrapper {
-        padding: 20px 0 0;
-      }
-
-      & + & {
-        margin: 110px 0 0;
-      }
     }
 
     &__member {
-      width: 350px;
-      height: 350px;
-
-      &:nth-child(n + 4) {
-        margin: 52px 0 0;
-      }
-
       &-data {
-        width: 90%;
+        width: 85%;
         height: 61px;
         margin: 0 0 -27px;
       }
@@ -156,19 +190,8 @@
     }
   }
 
-  @include rwd(s) {
-    &__member {
-      width: 250px;
-      height: 250px;
-    }
-  }
-
   @include rwd(xs) {
     &__member {
-      width: 200px;
-      height: 200px;
-      margin-left: 20px;
-
       &-name {
         font-size: $font-size-mid;
         text-align: center;
@@ -181,6 +204,8 @@
   }
 
   @include rwd(xxs) {
+    margin: 0 0 40px;
+
     &__heading {
       text-align: center;
     }
@@ -192,20 +217,29 @@
     }
 
     &__member {
-      width: 160px;
-      height: 160px;
-      margin: 0;
+      width: 48%;
+      margin-left: 0;
+      padding: 48% 0 0;
+
+      &:nth-child(even) {
+        margin-left: 4%;
+      }
 
       &:nth-child(n+3) {
         margin-top: 50px;
+
+        &::before {
+          content: unset;
+        }
       }
     }
   }
 
-  @include rwd(360px) {
+  @include rwd(400px) {
     &__member {
-      width: 140px;
-      height: 140px;
+      &-position {
+        font-size: 10px;
+      }
     }
   }
 }
